@@ -6,6 +6,16 @@ nav_order: 5
 ---
 
 # php-client
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 The [PHP client](https://github.com/Mark-Sign/gateway-sdk-php/) helps to lighten the hassle of building all APIs from the scratch. It contains wrapper classes which will help the development of integration with the Mark-Sign APIs faster. This package complies with PSR-4 autoloading standard.
 
