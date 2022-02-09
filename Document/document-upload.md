@@ -96,7 +96,7 @@ This endpoint is for uploading document for further tasks like validating the do
 
 ```
 {
-  "access_token": "f4b79b72-7587-f417-41f8-2de5a7c87fae",
+  "access_token": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
   "access": "private",
   "file": {
     "filename": "demo.pdf",
@@ -137,7 +137,7 @@ This endpoint is for uploading document for further tasks like validating the do
 }
 ```
 
-### Sample error response
+### Sample failed response
 
 ```
 {
@@ -147,6 +147,30 @@ This endpoint is for uploading document for further tasks like validating the do
 }
 ```
 
-## Working with SDK php-client
+## Implementation
 
-`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentUploadRequestBuilder` class have to be used to build the request. All the methods for building the request are included in the class.
+### CURL
+
+```
+curl --location --request POST 'http://app.marksign.local/api/document/upload.json' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "access_token": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+  "access": "private",
+  "file": {
+    "filename": "demo.pdf",
+    "content": "JVBERi0xLjUKJbXtrvsKNzYgMCBvYmoKPDwgL0xlbmd0a..............JlYW0KZW5kb2JqCnN0YXJ0eHJlZgo1MDg5MwolJUVPRgo="
+  },
+  "signers": [{
+    "name": "Tex",
+    "surname": "Ryta",
+    "email": "tex.ryta@domain.com",
+    "noEmail": false
+  }, {
+    "name": "John",
+    "surname": "Quil",
+    "email": "john.quil@domain.com",
+    "noEmail": false
+  }]
+}'
+```
