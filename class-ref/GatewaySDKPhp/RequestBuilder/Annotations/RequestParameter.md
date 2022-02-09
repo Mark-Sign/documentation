@@ -1,7 +1,7 @@
 ---
 layout: default
 title: AppBundle\GatewaySDKPhp\RequestBuilder\Annotations\RequestParameter
-parent: Document
+parent: Class References
 has_toc: true
 nav_order: 1
 ---
