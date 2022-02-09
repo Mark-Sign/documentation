@@ -48,6 +48,8 @@ In the following, `AppBundle\GatewaySDKPhp\RequestBuilder\DocumentUploadRequestB
 
 ```
 use AppBundle\GatewaySDKPhp\RequestBuilder\DocumentUploadRequestBuilder;
+use AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload;
+use AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Signer;
 
 $filePath = __DIR__ . "demo.pdf";
 
@@ -72,3 +74,35 @@ $responseArray = $response->toArray(false);
 ```
 
 And, that's it. API call has been done and by using `toArray()` on the response, we can convert the response to an array.
+
+The whole code block is as following
+
+```
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+use AppBundle\GatewaySDKPhp\Client;
+use AppBundle\GatewaySDKPhp\RequestBuilder\DocumentUploadRequestBuilder;
+use AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload;
+use AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Signer;
+
+$apiKey = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
+$logger = new Logger('dev', [new StreamHandler('log_file_name')]);
+
+$client = new Client($apiKey, $logger);
+$filePath = __DIR__ . "demo.pdf";
+
+$requestBuilder = (new DocumentUploadRequestBuilder)
+    ->withAccessToken(ACCESS_TOKEN)
+    ->withAccess('private')
+    ->withFile(
+        (new FileUpload)->setFileName(basename($filePath))->setContent(base64_encode(file_get_contents($filePath)))
+    )
+    ->withSigners([
+        (new Signer)->setName('Tex')->setSurName('Ryta')->setEmail('tex.ryta@domain.com')->setNoEmail(false),
+        (new Signer)->setName('John')->setSurName('Quil')->setEmail('john.quil@domain.com')->setNoEmail(false),
+    ])
+    ->createRequest();
+
+$response = $client->postRequest($requestBuilder);
+$responseArray = $response->toArray(false);
+```
