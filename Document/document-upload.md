@@ -196,7 +196,7 @@ To use the php-client, please follow the installation and basic usage [here](/do
 $apiKey = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
 $accessToken = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
 
-$client = new Client( $apiKey, new Logger('dev', [new StreamHandler('log.txt')]) );
+$client = new Client($apiKey, new Logger('dev', [new StreamHandler('log.txt')]));
 
 $filePath = __DIR__ . "/demo.pdf";
 
@@ -204,7 +204,7 @@ $uploadRB = (new DocumentUploadRequestBuilder)
   ->withAccessToken($accessToken)
   ->withAccess('private')
   ->withFile(
-    (new FileUpload)->setFileName(basename($filePath))->setContent(base64_encode(file_get_contents($filePath)))
+      (new FileUpload)->setFileName(basename($filePath))->setContent(base64_encode(file_get_contents($filePath)))
   )
   ->withSigners([
     (new Signer)->setName('Tex')->setSurName('Ryta')->setEmail('tex.ryta@domain.com')->setNoEmail(false),
@@ -212,5 +212,5 @@ $uploadRB = (new DocumentUploadRequestBuilder)
   ])
   ->createRequest();
 $uploadRes = $client->postRequest($uploadRB);
-$uploadResArray = $response->toArray(false);
+$uploadResArray = $uploadRes->toArray(false);
 ```
