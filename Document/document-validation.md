@@ -43,7 +43,7 @@ This endpoint is for validation checking of the document.
 
 | Key |  Requirement | Type | Description |
 | :--- |  :--- | :--- | :--- |
-| documentId |  Mandatory | String | Document UUID from response of ["Document upload"](/documentation/Document/document-upload.md) |
+| documentId |  Mandatory | String | Document UUID from response of ["Document upload"](/documentation/Document/document-upload.html) |
 
 ## Request body parameter description
 
@@ -147,8 +147,8 @@ curl --location --request POST 'https://app.marksign.local/api/v2/document/1a7b6
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.md), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentValidationRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/DocumentValidationRequestBuilder.md) as request builder.
-And we have to use document uuid as `documentId` that can be found in the response in [this section](/documentation/Document/document-upload.md#using-php-client)
+To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentValidationRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/DocumentValidationRequestBuilder.html) as request builder.
+And we have to use document uuid as `documentId` that can be found in the response in [this section](/documentation/Document/document-upload.html#using-php-client)
 
 ```
 $apiKey = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
