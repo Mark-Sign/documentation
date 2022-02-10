@@ -200,7 +200,7 @@ $client = new Client( $apiKey, new Logger('dev', [new StreamHandler('log.txt')])
 
 $filePath = __DIR__ . "/demo.pdf";
 
-$requestBuilder = (new DocumentUploadRequestBuilder)
+$uploadRB = (new DocumentUploadRequestBuilder)
   ->withAccessToken($accessToken)
   ->withAccess('private')
   ->withFile(
@@ -211,6 +211,7 @@ $requestBuilder = (new DocumentUploadRequestBuilder)
     (new Signer)->setName('John')->setSurName('Quil')->setEmail('john.quil@domain.com')->setNoEmail(false),
   ])
   ->createRequest();
-$response = $client->postRequest($requestBuilder);
-$responseArray = $response->toArray(false);
+$uploadRes = $client->postRequest($uploadRB);
+$uploadResArray = $response->toArray(false);
+print_r($uploadResArray);
 ```
