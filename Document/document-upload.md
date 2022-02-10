@@ -152,9 +152,9 @@ Content-Type: application/json
 
 ```
 {
-    "status": "error",
-    "message": "Invalid parameter [access]: Access must be private or public",
-    "error_code": 40001
+  "status": "error",
+  "message": "Invalid parameter [access]: Access must be private or public",
+  "error_code": 40001
 }
 ```
 
@@ -201,16 +201,16 @@ $client = new Client( $apiKey, new Logger('dev', [new StreamHandler('log.txt')])
 $filePath = __DIR__ . "/demo.pdf";
 
 $requestBuilder = (new DocumentUploadRequestBuilder)
-    ->withAccessToken($accessToken)
-    ->withAccess('private')
-    ->withFile(
-        (new FileUpload)->setFileName(basename($filePath))->setContent(base64_encode(file_get_contents($filePath)))
-    )
-    ->withSigners([
-        (new Signer)->setName('Tex')->setSurName('Ryta')->setEmail('tex.ryta@domain.com')->setNoEmail(false),
-        (new Signer)->setName('John')->setSurName('Quil')->setEmail('john.quil@domain.com')->setNoEmail(false),
-    ])
-    ->createRequest();
+  ->withAccessToken($accessToken)
+  ->withAccess('private')
+  ->withFile(
+    (new FileUpload)->setFileName(basename($filePath))->setContent(base64_encode(file_get_contents($filePath)))
+  )
+  ->withSigners([
+    (new Signer)->setName('Tex')->setSurName('Ryta')->setEmail('tex.ryta@domain.com')->setNoEmail(false),
+    (new Signer)->setName('John')->setSurName('Quil')->setEmail('john.quil@domain.com')->setNoEmail(false),
+  ])
+  ->createRequest();
 $response = $client->postRequest($requestBuilder);
 $responseArray = $response->toArray(false);
 ```
