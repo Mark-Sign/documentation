@@ -163,7 +163,7 @@ Content-Type: application/json
 ### CURL
 
 ```
-curl --location --request POST 'http://app.marksign.local/api/document/upload.json' \
+curl --location --request POST 'https://app.marksign.local/api/document/upload.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
