@@ -174,3 +174,30 @@ curl --location --request POST 'http://app.marksign.local/api/document/upload.js
   }]
 }'
 ```
+
+### Using php-client
+
+To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentUploadRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/DocumentUploadRequestBuilder.md) as request builder.
+
+```
+$apiKey = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
+$accessToken = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
+
+$client = new Client( $apiKey, new Logger('dev', [new StreamHandler('log.txt')]) );
+
+$filePath = __DIR__ . "/demo.pdf";
+
+$requestBuilder = (new DocumentUploadRequestBuilder)
+    ->withAccessToken($accessToken)
+    ->withAccess('private')
+    ->withFile(
+        (new FileUpload)->setFileName(basename($filePath))->setContent(base64_encode(file_get_contents($filePath)))
+    )
+    ->withSigners([
+        (new Signer)->setName('Tex')->setSurName('Ryta')->setEmail('tex.ryta@domain.com')->setNoEmail(false),
+        (new Signer)->setName('John')->setSurName('Quil')->setEmail('john.quil@domain.com')->setNoEmail(false),
+    ])
+    ->createRequest();
+$response = $client->postRequest($requestBuilder);
+$responseArray = $response->toArray(false);
+```
