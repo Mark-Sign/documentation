@@ -95,6 +95,10 @@ This endpoint is for uploading document for further tasks like validating the do
 ## Sample request
 
 ```
+POST /api/document/upload.json HTTP/1.1
+Host: app.marksign.local
+Content-Type: application/json
+
 {
   "access_token": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
   "access": "private",
