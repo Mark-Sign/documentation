@@ -41,56 +41,63 @@ This endpoint is for uploading document for further tasks like validating the do
 
 ## Request body parameter description
 
-| Key          |  Requirement | Type            | Description                                                                                                                |
-| :---         |  :---        | :---            | :---                                                                                                                       |
-| access_token |  Mandatory   | String          | API Access Token                                                                                                           |
-| access       |  Mandatory   | String          | Document access. Possible values: public, private                                                                          |
-| file         |  Mandatory   | Object          | File object that will be uploaded. Follow [Request file object description](#request-file-object-description) section      |
-| signers      |  Mandatory   | Array of Objects | Array containing signer objects. Follow [Request signer object description](#request-signer-object-description) section   |
+| Key | Requirement | Type | Description |
+| :--- | :--- | :--- | :--- |
+| access_token | Mandatory | String | API Access Token |
+| access | Mandatory | String | Document access. Possible values: public, private |
+| file | Mandatory | Object | File object that will be uploaded. Follow [Request file object description](#request-file-object-description) section |
+| signers | Mandatory | Array of Objects | Array containing signer objects. Follow [Request signer object description](#request-signer-object-description) section |
 
 ### Request file object description
 
-| Key          | Requirement | Type    | Description                             |
-| :---         | :---        | :---    | :---                                    |
-| filename     | Mandatory   | String  | Name of the file                        |
-| content      | Mandatory   | String  | Base64 encoded file content             |
-| callbackUrl  | Optional    | String  | Callback URL to send uuid after signing |
+| Key | Requirement | Type | Description |
+| :--- | :--- | :--- | :--- |
+| filename | Mandatory | String | Name of the file |
+| content | Mandatory | String | Base64 encoded file content |
+| callbackUrl | Optional | String | Callback URL to send uuid after signing |
 
 ### Request signer object description
 
-| Key        | Requirement | Type    | Description                                                                             |
-| :---       | :---        | :---    | :---                                                                                    |
-| name       | Mandatory   | String  | Signer's name                                                                           |
-| surname    | Mandatory   | String  | Signer's surname                                                                        |
-| email      | Mandatory   | String  | Signer's email                                                                          |
-| successUrl | Optional    | String  | Document upload success redirection URL                                                 |
-| noEmail    | Optional    | Boolean | If `true` them email with invitation URL will not be sent to signer (default: `false`)  |
+| Key | Requirement | Type | Description |
+| :--- | :--- | :--- | :--- |
+| name | Mandatory | String | Signer's name |
+| surname | Mandatory | String | Signer's surname |
+| email | Mandatory | String | Signer's email |
+| successUrl | Optional | String | Document upload success redirection URL |
+| noEmail | Optional | Boolean | If `true` them email with invitation URL will not be sent to signer (default: `false`) |
 
 ## Response body parameter description
 
 ### Successful response
 
-| Key      | Type              | Description                                                                                                                                                                   |
-| :---     | :---              | :---                                                                                                                                                                          |
-| status   | String            | Status of the request, `ok` in this case                                                                                                                                      |
-| message  | String            | Status message                                                                                                                                                                |
-| signers  | Array of Objects  | Array containing signer objects that was provided in request along with other infos. Follow [Response signer object description](#response-signer-object-description) section |
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| status | String | Status of the request, `ok` in this case |
+| message | String | Status message |
+| document | Object | Contains document info, like `uuid` which will be used in future requests Follow [Response document object description](#response-document-object-description) |
+| signers | Array of Objects | Array containing signer objects that was provided in request along with other infos. Follow [Response signer object description](#response-signer-object-description) section |
+
+### Response document object description
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| uuid | String | UUID of the uploaded document |
 
 ### Response signer object description
 
-| Key            | Type    | Description                                                                       |
-| :---           | :---    | :---                                                                              |
-| name           | String  | Signer's name                                                                     |
-| surname        | String  | Signer's surname                                                                  |
-| invitationUrl  | String  | URL to re-invite this signer. Non null value if `noEmail` is `false`, else `null` |
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| name | String | Signer's name |
+| surname | String | Signer's surname |
+| invitationUrl | String | URL to re-invite this signer. Non null value if `noEmail` is `false`, else `null` |
 
 ### Failed response
 
-| Key        | Type    | Description                                 |
-| :---       | :---    | :---                                        |
-| status     | String  | Status of the request, `error` in this case |
-| message    | String  | Status message                              |
-| error_code | Number  | Unique code for the error                   |
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| status | String | Status of the request, `error` in this case |
+| message | String | Status message |
+| error_code | Number | Unique code for the error |
 
 ## Sample request
 
@@ -178,6 +185,8 @@ curl --location --request POST 'http://app.marksign.local/api/document/upload.js
   }]
 }'
 ```
+
+Please note that content has been truncated in the previous example.
 
 ### Using php-client
 
