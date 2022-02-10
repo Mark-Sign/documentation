@@ -193,6 +193,7 @@ Please note that content has been truncated in the previous example.
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.md), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentUploadRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/DocumentUploadRequestBuilder.md) as request builder.
 
 ```
+
 $apiKey = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
 $accessToken = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
 
@@ -213,5 +214,5 @@ $uploadRB = (new DocumentUploadRequestBuilder)
   ->createRequest();
 $uploadRes = $client->postRequest($uploadRB);
 $uploadResArray = $response->toArray(false);
-print_r($uploadResArray);
+
 ```
