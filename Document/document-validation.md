@@ -3,7 +3,7 @@ layout: default
 title: Document Validation
 parent: Document
 has_toc: true
-nav_order: 2
+nav_exclude: true
 ---
 
 # Document validation

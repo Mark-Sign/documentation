@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Document
-nav_order: 2
+nav_exclude: true
 has_children: true
 ---
 
