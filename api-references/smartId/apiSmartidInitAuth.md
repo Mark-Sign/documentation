@@ -4,7 +4,7 @@ title: Smartid Init Auth
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 
+nav_order: 1
 ---
 
 # Smartid Init Auth

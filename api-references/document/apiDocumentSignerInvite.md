@@ -4,7 +4,7 @@ title: Document Signer Invite
 parent: Document APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 2
+nav_order: 3
 ---
 
 # Document Signer Invite

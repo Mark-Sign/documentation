@@ -4,7 +4,7 @@ title: Smartid Identification Remove
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 6
+nav_order: 7
 ---
 
 # Smartid Identification Remove

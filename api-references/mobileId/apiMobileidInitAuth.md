@@ -4,7 +4,7 @@ title: Mobileid Init Auth
 parent: Mobile-ID APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 0
+nav_order: 1
 ---
 
 # Mobileid Init Auth

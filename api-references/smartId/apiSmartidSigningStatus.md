@@ -4,7 +4,7 @@ title: Smartid Signing Status
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 2
+nav_order: 3
 ---
 
 # Smartid Signing Status

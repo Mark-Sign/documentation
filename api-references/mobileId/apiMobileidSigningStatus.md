@@ -4,7 +4,7 @@ title: Mobileid Signing Status
 parent: Mobile-ID APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 2
+nav_order: 3
 ---
 
 # Mobileid Signing Status

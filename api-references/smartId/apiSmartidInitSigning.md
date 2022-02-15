@@ -4,7 +4,7 @@ title: Smartid Init Signing
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 3
+nav_order: 4
 ---
 
 # Smartid Init Signing

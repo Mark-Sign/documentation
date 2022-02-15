@@ -4,7 +4,7 @@ title: Document Validation
 parent: Document APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 1
+nav_order: 2
 ---
 
 # Document Validation

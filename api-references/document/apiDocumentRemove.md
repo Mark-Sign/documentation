@@ -4,7 +4,7 @@ title: Document Remove
 parent: Document APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 5
+nav_order: 6
 ---
 
 # Document Remove
