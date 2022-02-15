@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mobileid Check Identification Session Status
-parent: API Reference
+parent: Mobile-ID APIs
 has_toc: true
 nav_order: 1
 ---
@@ -26,11 +26,11 @@ Short description
   <tbody>
     <tr>
       <td>Path (Locale: LT)</td>
-      <td>/mobile/status/15dd492c-8fc7-11ad-cad7-24bcde0b0254.json</td>
+      <td>/mobile/status/{token}.json</td>
     </tr>
     <tr>
       <td>Path (Locale: EN)</td>
-      <td>/en/mobile/status/15dd492c-8fc7-11ad-cad7-24bcde0b0254.json</td>
+      <td>/en/mobile/status/{token}.json</td>
     </tr>
     <tr>
       <td>Method</td>
@@ -42,6 +42,12 @@ Short description
     </tr>
   </tbody>
 </table>
+
+## URL parameter description
+
+| Key | Requirement | Type | Description |
+| :--- | :--- | :--- | :--- |
+| token | Mandatory | String | Description |
 
 ## Request body parameter description
 
@@ -126,7 +132,7 @@ Short description
 ## Sample request
 
 ```
-POST /en/mobile/status/15dd492c-8fc7-11ad-cad7-24bcde0b0254.json HTTP/1.1
+POST /en/mobile/status/381ed84f-0851-ce1e-a048-fa1e13a53bba.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -165,8 +171,8 @@ Content-Type: application/json
   },
   "code": "60001017705",
   "name": "TEN",
-  "token": "15dd492c-8fc7-11ad-cad7-24bcde0b0254",
-  "control_code": "1554",
+  "token": "381ed84f-0851-ce1e-a048-fa1e13a53bba",
+  "control_code": "6223",
   "surname": "TESTNUMBER",
   "sanctions_data": [],
   "peps_data": []
@@ -190,7 +196,7 @@ Please note that some json values have been truncated in the previous example.
 ### CURL
 
 ```
-curl --location --request POST 'https://app.marksign.local/en/mobile/status/15dd492c-8fc7-11ad-cad7-24bcde0b0254.json' \
+curl --location --request POST 'https://app.marksign.local/en/mobile/status/381ed84f-0851-ce1e-a048-fa1e13a53bba.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
@@ -202,18 +208,16 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/status/15dd
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidIdentificationStatusRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidIdentificationStatusRequestBuilder.html) as request builder.
 
 ```
-/**
- * The token was found from the response of 'mobile id init auth' request.
- * The following values are dummy.
+ * The token was found from the response of 'initialize authentication via mobile id' request.
+ * The following is a dummy to use as example.
  */
 $token = '40a77456-8b15-4818-2df2-034376f6c6f5';
-$accessToken = '6102d227-0dcf-4ce3-ab8f-337385f09ee4';
 
 $identStatusReq = (new MobileidIdentificationStatusRequestBuilder)
   ->withToken($token)
-  ->withAccessToken($accessToken)
   ->createRequest();
 $identStatusRes = $client->postRequest($identStatusReq);
 $identStatusResArray = $identStatusRes->toArray(false);
 var_dump($identStatusResArray);
+
 ```

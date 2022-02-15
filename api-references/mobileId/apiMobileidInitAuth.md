@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mobileid Init Auth
-parent: API Reference
+parent: Mobile-ID APIs
 has_toc: true
 nav_order: 0
 ---
@@ -42,6 +42,8 @@ Short description
     </tr>
   </tbody>
 </table>
+
+
 
 ## Request body parameter description
 
@@ -160,8 +162,8 @@ Content-Type: application/json
     "value": "TUlJRnZEQ0NBNlNnQXdJQkFnSVFUNnM1QU1GN1VncGZybytaam..........QxdnNBWmVZRGlveURtejVEaVg5QUlPWUtkWVhxOGZRT2k3ND0="
   },
   "code": "60001017705",
-  "token": "15dd492c-8fc7-11ad-cad7-24bcde0b0254",
-  "control_code": "1554"
+  "token": "381ed84f-0851-ce1e-a048-fa1e13a53bba",
+  "control_code": "6223"
 }
 ```
 
@@ -201,20 +203,10 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/login.json'
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitAuthRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitAuthRequestBuilder.html) as request builder.
 
 ```
-/**
- * The following values are dummy.
- */
-$apiKey = 'd720217e-5e0e-464b-9047-79a66633a471';
-$accessToken = '6102d227-0dcf-4ce3-ab8f-337385f09ee4';
-
-$client = new Client($apiKey, new Logger('dev', [new StreamHandler('log.txt')]));
-
-/**
  * The token in response ($initAuthResArray['token'] in this example),
  * might need to be saved for future purposes.
  */
 $initAuthReq = (new MobileidInitAuthRequestBuilder)
-  ->withAccessToken($accessToken)
   ->withPhone('+37269000366')
   ->withCode('60001017705')
   ->withLanguage('ENG')
@@ -226,4 +218,5 @@ $initAuthReq = (new MobileidInitAuthRequestBuilder)
 $initAuthRes = $client->postRequest($initAuthReq);
 $initAuthResArray = $initAuthRes->toArray(false);
 var_dump($initAuthResArray);
+
 ```

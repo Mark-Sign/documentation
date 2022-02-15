@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Document Upload
-parent: API Reference
+parent: Document APIs
 has_toc: true
 nav_order: 0
 ---
@@ -42,6 +42,8 @@ Short description
     </tr>
   </tbody>
 </table>
+
+
 
 ## Request body parameter description
 
@@ -147,18 +149,18 @@ Please note that some json values have been truncated in the previous example.
 {
   "status": "ok",
   "document": {
-    "uuid": "7ecd1d16-ed31-195a-2dc4-51c53d2f18b0"
+    "uuid": "cff827fc-e70e-167c-4ae5-d388b1b5c264"
   },
   "signers": [
     {
       "name": "Tex",
       "surname": "Ryta",
-      "invitationUrl": "https://app.marksign.local/en/user/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/signer/3bf28d9b-56e3-1862-7177-62bb8f4a6391"
+      "invitationUrl": "https://app.marksign.local/en/user/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/signer/aa7ba4a1-d93e-b31c-81bf-a885cf952f45"
     },
     {
       "name": "John",
       "surname": "Quil",
-      "invitationUrl": "https://app.marksign.local/en/user/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/signer/cc5766bf-ac5a-2b0d-0186-ad812515aefe"
+      "invitationUrl": "https://app.marksign.local/en/user/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/signer/5244fc01-af77-319f-66e2-fbc8ba344520"
     }
   ]
 }
@@ -212,19 +214,11 @@ Please note that some json values have been truncated in the previous example.
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentUploadRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/DocumentUploadRequestBuilder.html) as request builder.
 
 ```
-$apiKey = '2209d24d-a2b0-48f5-ba65-c65fa73a7e5c';
-$accessToken = '7298cc61-7184-4a06-a17f-5691a0970805';
-
-$client = new Client($apiKey, new Logger('dev', [new StreamHandler('log.txt')]));
-
-$filePath = __DIR__ . '/demo.pdf';
-
 /**
  * The uuid of document from response ($uploadResArray['dpcument']['uuid'] in this example),
  * might need to be saved somewhere for future purposes.
  */
 $uploadReq = (new DocumentUploadRequestBuilder)
-  ->withAccessToken($accessToken)
   ->withAccess('private')
   ->withFile(
     (new FileUpload)->setFileName(basename($filePath))->setContent(base64_encode(file_get_contents($filePath)))

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mobileid Hash Signing Status
-parent: API Reference
+parent: Mobile-ID APIs
 has_toc: true
 nav_order: 5
 ---
@@ -26,11 +26,11 @@ Short description
   <tbody>
     <tr>
       <td>Path (Locale: LT)</td>
-      <td>/mobile/sign-hash/status/31c5b0b8-9534-3e0e-2126-9d25945efc4c.json</td>
+      <td>/mobile/sign-hash/status/{token}.json</td>
     </tr>
     <tr>
       <td>Path (Locale: EN)</td>
-      <td>/en/mobile/sign-hash/status/31c5b0b8-9534-3e0e-2126-9d25945efc4c.json</td>
+      <td>/en/mobile/sign-hash/status/{token}.json</td>
     </tr>
     <tr>
       <td>Method</td>
@@ -42,6 +42,12 @@ Short description
     </tr>
   </tbody>
 </table>
+
+## URL parameter description
+
+| Key | Requirement | Type | Description |
+| :--- | :--- | :--- | :--- |
+| token | Mandatory | String | Description |
 
 ## Request body parameter description
 
@@ -75,7 +81,7 @@ Short description
 ## Sample request
 
 ```
-POST /en/mobile/sign-hash/status/31c5b0b8-9534-3e0e-2126-9d25945efc4c.json HTTP/1.1
+POST /en/mobile/sign-hash/status/320a35af-19c9-eecd-5f7e-8725393bd955.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -91,7 +97,7 @@ Content-Type: application/json
 ```
 {
   "status": "ok",
-  "signature_value": "yFejaXcMw/AyhJjvWj+R/d8ucmXchpfMzWebW4OcRvMkkfTZxtwQQwZQI1NondeeytAYWJXdxmgEM40/qRu5aA=="
+  "signature_value": "2lbblqYAovd88pXDVK5FeC2d3hBd4xSoNII21doSIE17UZ+ZpSB9dpi/DqVhTziKrVYZysw5J0gqCEA4tji/Dw=="
 }
 ```
 
@@ -110,7 +116,7 @@ Content-Type: application/json
 ### CURL
 
 ```
-curl --location --request POST 'https://app.marksign.local/en/mobile/sign-hash/status/31c5b0b8-9534-3e0e-2126-9d25945efc4c.json' \
+curl --location --request POST 'https://app.marksign.local/en/mobile/sign-hash/status/320a35af-19c9-eecd-5f7e-8725393bd955.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
@@ -122,18 +128,16 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/sign-hash/s
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidHashSigningProcessStatusRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidHashSigningProcessStatusRequestBuilder.html) as request builder.
 
 ```
-/**
- * The hashSignToken was found from the response of 'initialize hash signing auth via mobile id' request.
- * The following values are dummy.
+ * The hashSignToken was found from the response of 'initialize hash signing authentication via mobile id' request.
+ * The following is a dummy to use as example.
  */
 $hashSignToken = 'e654322d-9c20-4630-bc26-16e11d8243ff';
-$accessToken = '6102d227-0dcf-4ce3-ab8f-337385f09ee4';
 
 $hashSignStatReq = (new MobileidHashSigningProcessStatusRequestBuilder)
   ->withToken($hashSignToken)
-  ->withAccessToken($accessToken)
   ->createRequest();
 $hashSignStatReq = $client->postRequest($hashSignStatReq);
 $hashSignStatReqArray = $hashSignStatReq->toArray(false);
 var_dump($hashSignStatReqArray);
+
 ```

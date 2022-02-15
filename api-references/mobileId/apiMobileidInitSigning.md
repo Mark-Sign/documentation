@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mobileid Init Signing
-parent: API Reference
+parent: Mobile-ID APIs
 has_toc: true
 nav_order: 3
 ---
@@ -42,6 +42,8 @@ Short description
     </tr>
   </tbody>
 </table>
+
+
 
 ## Request body parameter description
 
@@ -134,8 +136,8 @@ Please note that some json values have been truncated in the previous example.
 ```
 {
   "status": "ok",
-  "token": "3cf176a2-5229-6c07-e7d6-6a5fe042b46b",
-  "control_code": "0668"
+  "token": "e287226b-662b-013b-02cd-ede81a4013ec",
+  "control_code": "2049"
 }
 ```
 
@@ -144,8 +146,8 @@ Please note that some json values have been truncated in the previous example.
 ```
 {
   "status": "ok",
-  "token": "7e3cc964-7ea5-109c-ddf1-9a4f2f417b43",
-  "control_code": "5973"
+  "token": "1aa8b210-3695-dc7b-bf2e-480e4e6127c8",
+  "control_code": "3291"
 }
 ```
 
@@ -185,13 +187,8 @@ Please note that some json values have been truncated in the previous example.
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitSigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitSigningRequestBuilder.html) as request builder.
 
 ```
-// The following values is dummy.
-$accessToken = '6102d227-0dcf-4ce3-ab8f-337385f09ee4';
-
-$filePath = __DIR__ . '/demo.pdf';
 
 $initSignReq = (new MobileidInitSigningRequestBuilder)
-  ->withAccessToken($accessToken)
   ->withType('pdf')
   ->withPhone('+37269000366')
   ->withMessage('Dummy')
@@ -210,4 +207,5 @@ $initSignReq = (new MobileidInitSigningRequestBuilder)
 $initSignRes = $client->postRequest($initSignReq);
 $initSignResArray = $response->toArray(false);
 var_dump($initSignResArray);
+
 ```

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mobileid Init Hash Signing
-parent: API Reference
+parent: Mobile-ID APIs
 has_toc: true
 nav_order: 4
 ---
@@ -42,6 +42,8 @@ Short description
     </tr>
   </tbody>
 </table>
+
+
 
 ## Request body parameter description
 
@@ -104,7 +106,7 @@ Content-Type: application/json
 ```
 {
   "status": "ok",
-  "token": "31c5b0b8-9534-3e0e-2126-9d25945efc4c",
+  "token": "320a35af-19c9-eecd-5f7e-8725393bd955",
   "control_code": "3555"
 }
 ```
@@ -142,16 +144,12 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/sign/hash.j
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitHashSigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitHashSigningRequestBuilder.html) as request builder.
 
 ```
-/**
  * The token in response ($hashSignInitResArray['token'] in this example),
  * might need to be saved for future purposes.
  */
-$accessToken = '6102d227-0dcf-4ce3-ab8f-337385f09ee4';
-
 $filePath = __DIR__ . '/demo.pdf';
 
 $hashSignInitReq = (new MobileidInitHashSigningRequestBuilder)
-  ->withAccessToken($accessToken)
   ->withHash(hash('sha256', file_get_contents($filePath)))
   ->withHashAlgorithm('SHA256')
   ->withCountry('EE')
@@ -162,4 +160,5 @@ $hashSignInitReq = (new MobileidInitHashSigningRequestBuilder)
 $hashSignInitRes = $client->postRequest($hashSignInitReq);
 $hashSignInitResArray = $hashSignInitRes->toArray(false);
 var_dump($hashSignInitResArray);
+
 ```

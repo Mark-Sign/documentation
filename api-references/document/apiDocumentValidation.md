@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Document Validation
-parent: API Reference
+parent: Document APIs
 has_toc: true
 nav_order: 1
 ---
@@ -26,11 +26,11 @@ Short description
   <tbody>
     <tr>
       <td>Path (Locale: LT)</td>
-      <td>/api/v2/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/validation.json</td>
+      <td>/api/v2/document/{documentId}/validation.json</td>
     </tr>
     <tr>
       <td>Path (Locale: EN)</td>
-      <td>/en/api/v2/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/validation.json</td>
+      <td>/en/api/v2/document/{documentId}/validation.json</td>
     </tr>
     <tr>
       <td>Method</td>
@@ -42,6 +42,12 @@ Short description
     </tr>
   </tbody>
 </table>
+
+## URL parameter description
+
+| Key | Requirement | Type | Description |
+| :--- | :--- | :--- | :--- |
+| documentId | Mandatory | String | Description |
 
 ## Request body parameter description
 
@@ -188,7 +194,7 @@ Short description
 ## Sample request
 
 ```
-POST /en/api/v2/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/validation.json HTTP/1.1
+POST /en/api/v2/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/validation.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -206,9 +212,9 @@ Content-Type: application/json
   "status": "ok",
   "data": {
     "simpleReport": {
-      "validationTime": 1644906323037,
+      "validationTime": 1644945539572,
       "firstTimestampId": null,
-      "documentFilename": "12h3MW.pdf",
+      "documentFilename": "XsZP49.pdf",
       "validSignaturesCount": 0,
       "signatureIdList": [],
       "timestampIdList": [],
@@ -219,18 +225,18 @@ Content-Type: application/json
           "policyName": "QES AdESQC TL based",
           "policyDescription": "Validate electronic signatures and indicates whether they are Advanced electronic Signatures (AdES), AdES supported by a Qualified Certificate (AdES/QC) or a\n\t\tQualified electronic Signature (QES). All certificates and their related chains supporting the signatures are validated against the EU Member State Trusted Lists (this includes\n\t\tsigner's certificate and certificates used to validate certificate validity status services - CRLs, OCSP, and time-stamps).\n\t"
         },
-        "documentName": "12h3MW.pdf",
+        "documentName": "XsZP49.pdf",
         "validSignaturesCount": 0,
         "signaturesCount": 0,
         "containerType": null,
         "signatureOrTimestamp": [],
         "semantic": [],
-        "validationTime": 1644906323037
+        "validationTime": 1644945539572
       }
     },
     "diagnosticData": {
-      "DocumentName": "12h3MW.pdf",
-      "ValidationDate": "2022-02-15T06:25:23",
+      "DocumentName": "XsZP49.pdf",
+      "ValidationDate": "2022-02-15T17:18:59",
       "Signatures": [],
       "UsedCertificates": [],
       "UsedRevocations": [],
@@ -256,7 +262,7 @@ Content-Type: application/json
 ### CURL
 
 ```
-curl --location --request POST 'https://app.marksign.local/en/api/v2/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/validation.json' \
+curl --location --request POST 'https://app.marksign.local/en/api/v2/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/validation.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "f4b79b72-7587-f417-41f8-2de5a7c87fae"
@@ -270,14 +276,12 @@ To use the php-client, please follow the installation and basic usage [here](/do
 ```
 /**
  * The document id that was found from document upload request.
- * The following values are dummy.
+ * The following is a dummy to use as example.
  */
 $documentId = 'c66cf14e-f763-9757-3b83-e5e28126a6df';
-$accessToken = '7298cc61-7184-4a06-a17f-5691a0970805';
 
 $validationReq = (new DocumentValidationRequestBuilder)
   ->withDocumentId($documentId)
-  ->withAccessToken($accessToken)
   ->createRequest();
 $validationRes = $client->postRequest($validationReq);
 $validationResArray = $validationRes->toArray(false);

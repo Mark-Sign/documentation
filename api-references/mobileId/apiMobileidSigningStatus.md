@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mobileid Signing Status
-parent: API Reference
+parent: Mobile-ID APIs
 has_toc: true
 nav_order: 2
 ---
@@ -26,11 +26,11 @@ Short description
   <tbody>
     <tr>
       <td>Path (Locale: LT)</td>
-      <td>/mobile/sign/status/15dd492c-8fc7-11ad-cad7-24bcde0b0254.json</td>
+      <td>/mobile/sign/status/{token}.json</td>
     </tr>
     <tr>
       <td>Path (Locale: EN)</td>
-      <td>/en/mobile/sign/status/15dd492c-8fc7-11ad-cad7-24bcde0b0254.json</td>
+      <td>/en/mobile/sign/status/{token}.json</td>
     </tr>
     <tr>
       <td>Method</td>
@@ -42,6 +42,12 @@ Short description
     </tr>
   </tbody>
 </table>
+
+## URL parameter description
+
+| Key | Requirement | Type | Description |
+| :--- | :--- | :--- | :--- |
+| token | Mandatory | String | Description |
 
 ## Request body parameter description
 
@@ -74,7 +80,7 @@ Short description
 ## Sample request
 
 ```
-POST /en/mobile/sign/status/15dd492c-8fc7-11ad-cad7-24bcde0b0254.json HTTP/1.1
+POST /en/mobile/sign/status/381ed84f-0851-ce1e-a048-fa1e13a53bba.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -108,7 +114,7 @@ Content-Type: application/json
 ### CURL
 
 ```
-curl --location --request POST 'https://app.marksign.local/en/mobile/sign/status/15dd492c-8fc7-11ad-cad7-24bcde0b0254.json' \
+curl --location --request POST 'https://app.marksign.local/en/mobile/sign/status/381ed84f-0851-ce1e-a048-fa1e13a53bba.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
@@ -120,18 +126,16 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/sign/status
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidSigningProcessStatusRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidSigningProcessStatusRequestBuilder.html) as request builder.
 
 ```
-/**
- * The token was found from the response of 'mobile id init auth' request.
- * The following values are dummy.
+ * The token was found from the response of 'initialize authentication via mobile id' request.
+ * The following is a dummy to use as example.
  */
 $token = '40a77456-8b15-4818-2df2-034376f6c6f5';
-$accessToken = '6102d227-0dcf-4ce3-ab8f-337385f09ee4';
 
 $signProcStatReq = (new MobileidSigningProcessStatusRequestBuilder)
-  ->withToken($responseArray['token'])
-  ->withAccessToken($accessToken)
+  ->withToken($token)
   ->createRequest();
 $signProcStatRes = $client->postRequest($signProcStatReq);
 $signProcStatResArray = $signProcStatRes->toArray(false);
 var_dump($signProcStatResArray);
+
 ```

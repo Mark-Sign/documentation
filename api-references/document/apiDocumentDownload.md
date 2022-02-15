@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Document Download
-parent: API Reference
+parent: Document APIs
 has_toc: true
 nav_order: 4
 ---
@@ -26,11 +26,11 @@ Short description
   <tbody>
     <tr>
       <td>Path (Locale: LT)</td>
-      <td>/api/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/download.json?access_token=f4b79b72-7587-f417-41f8-2de5a7c87fae</td>
+      <td>/api/document/{documentId}/download.json</td>
     </tr>
     <tr>
       <td>Path (Locale: EN)</td>
-      <td>/en/api/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/download.json?access_token=f4b79b72-7587-f417-41f8-2de5a7c87fae</td>
+      <td>/en/api/document/{documentId}/download.json</td>
     </tr>
     <tr>
       <td>Method</td>
@@ -42,6 +42,12 @@ Short description
     </tr>
   </tbody>
 </table>
+
+## URL parameter description
+
+| Key | Requirement | Type | Description |
+| :--- | :--- | :--- | :--- |
+| documentId | Mandatory | String | Description |
 
 ## Request body parameter description
 
@@ -73,7 +79,7 @@ Short description
 ## Sample request
 
 ```
-GET /en/api/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/download.json?access_token=f4b79b72-7587-f417-41f8-2de5a7c87fae HTTP/1.1
+GET /en/api/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/download.json?access_token=f4b79b72-7587-f417-41f8-2de5a7c87fae HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -104,7 +110,7 @@ Content-Type: application/json
 ### CURL
 
 ```
-curl --location --request GET 'https://app.marksign.local/en/api/document/7ecd1d16-ed31-195a-2dc4-51c53d2f18b0/download.json?access_token=f4b79b72-7587-f417-41f8-2de5a7c87fae' \
+curl --location --request GET 'https://app.marksign.local/en/api/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/download.json?access_token=f4b79b72-7587-f417-41f8-2de5a7c87fae' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "f4b79b72-7587-f417-41f8-2de5a7c87fae"
@@ -118,13 +124,11 @@ To use the php-client, please follow the installation and basic usage [here](/do
 ```
 /**
  * The document id that was found from document upload request.
- * The following values are dummy.
+ * The following is a dummy to use as example.
  */
 $documentId = 'c66cf14e-f763-9757-3b83-e5e28126a6df';
-$accessToken = '7298cc61-7184-4a06-a17f-5691a0970805';
 
 $downloadReq = (new DocumentDownloadRequestBuilder)
-  ->withAccessToken($accessToken)
   ->withDocumentId($documentId)
   ->createRequest();
 $downloadRes = $client->postRequest($downloadReq);

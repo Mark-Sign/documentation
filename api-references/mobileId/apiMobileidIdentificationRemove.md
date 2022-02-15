@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mobileid Identification Remove
-parent: API Reference
+parent: Mobile-ID APIs
 has_toc: true
 nav_order: 6
 ---
@@ -26,11 +26,11 @@ Short description
   <tbody>
     <tr>
       <td>Path (Locale: LT)</td>
-      <td>/api/mobile/session/31c5b0b8-9534-3e0e-2126-9d25945efc4c</td>
+      <td>/api/mobile/session/{sessionId}</td>
     </tr>
     <tr>
       <td>Path (Locale: EN)</td>
-      <td>/en/api/mobile/session/31c5b0b8-9534-3e0e-2126-9d25945efc4c</td>
+      <td>/en/api/mobile/session/{sessionId}</td>
     </tr>
     <tr>
       <td>Method</td>
@@ -42,6 +42,12 @@ Short description
     </tr>
   </tbody>
 </table>
+
+## URL parameter description
+
+| Key | Requirement | Type | Description |
+| :--- | :--- | :--- | :--- |
+| sessionId | Mandatory | String | Description |
 
 ## Request body parameter description
 
@@ -73,7 +79,7 @@ Short description
 ## Sample request
 
 ```
-DELETE /en/api/mobile/session/31c5b0b8-9534-3e0e-2126-9d25945efc4c HTTP/1.1
+DELETE /en/api/mobile/session/320a35af-19c9-eecd-5f7e-8725393bd955 HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -106,7 +112,7 @@ Content-Type: application/json
 ### CURL
 
 ```
-curl --location --request DELETE 'https://app.marksign.local/en/api/mobile/session/31c5b0b8-9534-3e0e-2126-9d25945efc4c' \
+curl --location --request DELETE 'https://app.marksign.local/en/api/mobile/session/320a35af-19c9-eecd-5f7e-8725393bd955' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
@@ -118,18 +124,15 @@ curl --location --request DELETE 'https://app.marksign.local/en/api/mobile/sessi
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidIdentificationRemoveRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidIdentificationRemoveRequestBuilder.html) as request builder.
 
 ```
-/**
  * The sessionId is the value of 'token' found either
- * from the response of 'mobile id init auth' request
- * or from the response of 'initialize hash signing auth via mobile id' request
- * The following values are dummy.
+ * from the response of 'initialize authentication via mobile id' request
+ * or from the response of 'initialize hash signing authentication via mobile id' request
+ * The following is a dummy to use as example.
  */
 $sessionId = '98ead4e1-015b-4968-bdcd-03797d1a4bea';
-$accessToken = '6102d227-0dcf-4ce3-ab8f-337385f09ee4';
 
 $indentRemReq = (new MobileidIdentificationRemoveRequestBuilder)
   ->withSessionId($sessionId)
-  ->withAccessToken($accessToken)
   ->createRequest();
 $indentRemRes = $client->postRequest($indentRemReq);
 $indentRemResArray = $indentRemRes->toArray(false);
