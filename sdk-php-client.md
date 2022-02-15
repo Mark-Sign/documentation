@@ -29,17 +29,17 @@ composer require mark-sign/gateway-sdk-php
 
 ## Usage
 
-To use the package, at first initialize the `AppBundle\GatewaySDKPhp\Client` class with APIKey and a logger insterface. In the following example [monolog logger](https://seldaek.github.io/monolog/) is used.
+To use the package, at first initialize the `AppBundle\GatewaySDKPhp\Client` class with access token and a logger insterface. In the following example [monolog logger](https://seldaek.github.io/monolog/) is used.
 
 ```
 use AppBundle\GatewaySDKPhp\Client;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
-$apiKey = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
+$accessToken = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
 $logger = new Logger('dev', [new StreamHandler('log_file_name')]);
 
-$client = new Client($apiKey, $logger);
+$client = new Client($accessToken, $logger);
 ```
 
 Then, build a request builder object which will contain request body parameters. The final call to `createRequest()` method will return an object that implements `AppBundle\GatewaySDKPhp\Model\RequestInterface`. All the request builders under the `AppBundle\GatewaySDKPhp\RequestBuilder` namespace implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface` which contains the declaration of `createRequest()` method, and hence, all the request builders will have their own implementation of `createRequest()` method.
@@ -85,10 +85,10 @@ use AppBundle\GatewaySDKPhp\RequestBuilder\DocumentUploadRequestBuilder;
 use AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload;
 use AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Signer;
 
-$apiKey = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
+$accessToken = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
 $logger = new Logger('dev', [new StreamHandler('log_file_name')]);
 
-$client = new Client($apiKey, $logger);
+$client = new Client($accessToken, $logger);
 $filePath = __DIR__ . "demo.pdf";
 
 $requestBuilder = (new DocumentUploadRequestBuilder)
