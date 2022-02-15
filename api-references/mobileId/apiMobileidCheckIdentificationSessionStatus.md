@@ -2,6 +2,7 @@
 layout: default
 title: Mobileid Check Identification Session Status
 parent: Mobile-ID APIs
+grand_parent: API Reference
 has_toc: true
 nav_order: 1
 ---

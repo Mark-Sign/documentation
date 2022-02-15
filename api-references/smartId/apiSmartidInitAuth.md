@@ -2,6 +2,7 @@
 layout: default
 title: Smartid Init Auth
 parent: Smart-ID APIs
+grand_parent: API Reference
 has_toc: true
 nav_order: 
 ---

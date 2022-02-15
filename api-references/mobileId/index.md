@@ -2,7 +2,7 @@
 layout: default
 title: Mobile-ID APIs
 nav_order: 2
-parent: Mobile-ID APIs
+parent: API Reference
 has_children: true
 ---
 

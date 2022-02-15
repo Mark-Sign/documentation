@@ -2,7 +2,7 @@
 layout: default
 title: Smart-ID APIs
 nav_order: 3
-parent: Smart-ID APIs
+parent: API Reference
 has_children: true
 ---
 

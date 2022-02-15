@@ -2,7 +2,7 @@
 layout: default
 title: Document APIs
 nav_order: 1
-parent: Document APIs
+parent: API Reference
 has_children: true
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: Smartid Check Identification Session Status
 parent: Smart-ID APIs
+grand_parent: API Reference
 has_toc: true
 nav_order: 1
 ---
