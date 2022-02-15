@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Mobileid Identification Remove
+title: Remove Identification Session
 parent: Mobile-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 7
 ---
 
-# Mobileid Identification Remove
+# Remove Identification Session
 {: .no_toc }
 
 <details open markdown="block">

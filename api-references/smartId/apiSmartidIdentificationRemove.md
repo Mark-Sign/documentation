@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Smartid Identification Remove
+title: Remove Identification Session
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 7
 ---
 
-# Smartid Identification Remove
+# Remove Identification Session
 {: .no_toc }
 
 <details open markdown="block">

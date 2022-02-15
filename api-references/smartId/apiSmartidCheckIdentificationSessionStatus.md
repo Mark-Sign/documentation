@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Smartid Check Identification Session Status
+title: Check Identification Session Status
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 2
 ---
 
-# Smartid Check Identification Session Status
+# Check Identification Session Status
 {: .no_toc }
 
 <details open markdown="block">

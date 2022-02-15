@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Smartid Init Auth
+title: Initialize Authentication
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 1
 ---
 
-# Smartid Init Auth
+# Initialize Authentication
 {: .no_toc }
 
 <details open markdown="block">

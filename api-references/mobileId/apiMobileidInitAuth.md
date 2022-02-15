@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Mobileid Init Auth
+title: Initialize Authentication
 parent: Mobile-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 1
 ---
 
-# Mobileid Init Auth
+# Initialize Authentication
 {: .no_toc }
 
 <details open markdown="block">

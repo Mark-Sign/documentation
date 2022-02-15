@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Mobileid Check Identification Session Status
+title: Check Identification Session Status
 parent: Mobile-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 2
 ---
 
-# Mobileid Check Identification Session Status
+# Check Identification Session Status
 {: .no_toc }
 
 <details open markdown="block">

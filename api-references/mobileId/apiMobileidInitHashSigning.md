@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Mobileid Init Hash Signing
+title: Initialize Hash Signing
 parent: Mobile-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 5
 ---
 
-# Mobileid Init Hash Signing
+# Initialize Hash Signing
 {: .no_toc }
 
 <details open markdown="block">

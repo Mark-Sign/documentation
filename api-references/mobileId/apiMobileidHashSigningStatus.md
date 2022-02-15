@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Mobileid Hash Signing Status
+title: Hash Signing Status
 parent: Mobile-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 6
 ---
 
-# Mobileid Hash Signing Status
+# Hash Signing Status
 {: .no_toc }
 
 <details open markdown="block">

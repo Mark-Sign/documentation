@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Smartid Init Hash Signing
+title: Initialize Authentication Hash Signing
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 5
 ---
 
-# Smartid Init Hash Signing
+# Initialize Authentication Hash Signing
 {: .no_toc }
 
 <details open markdown="block">

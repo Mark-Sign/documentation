@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Smartid Signing Status
+title: Signing Status
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 3
+nav_order: 4
 ---
 
-# Smartid Signing Status
+# Signing Status
 {: .no_toc }
 
 <details open markdown="block">
