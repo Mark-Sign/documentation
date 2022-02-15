@@ -9,6 +9,8 @@ nav_order: 1
 # AppBundle\GatewaySDKPhp\Client
 {: .no_toc }
 
+
+
 <details open markdown="block">
   <summary>
     Table of contents
@@ -29,7 +31,7 @@ nav_order: 1
 
 ## Methods
 
-### `public __construct(string $apiKey, Psr\Log\LoggerInterface $logger)`
+### `public __construct(string $apiKey, Psr\Log\LoggerInterface $logger, string $locale)`
 
 *returns* void
 
@@ -49,7 +51,7 @@ A short description
 
 ### `public postRequest(AppBundle\GatewaySDKPhp\Model\RequestInterface $request)`
 
-*returns* AppBundle\GatewaySDKPhp\Model\ResponseInterface
+*returns* void
 
 A short description
 

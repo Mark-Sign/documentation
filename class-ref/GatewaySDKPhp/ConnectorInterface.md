@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\Annotations\RequestParameter
+title: AppBundle\GatewaySDKPhp\ConnectorInterface
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\Annotations\RequestParameter
+# AppBundle\GatewaySDKPhp\ConnectorInterface
 {: .no_toc }
 
 
@@ -24,8 +24,13 @@ nav_order: 1
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| public |  | name |  |
 
 
 ## Methods
+
+### `public abstract postRequest(AppBundle\GatewaySDKPhp\Model\RequestInterface $request)`
+
+*returns* void
+
+A short description
 

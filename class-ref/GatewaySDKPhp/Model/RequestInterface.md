@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files
+title: AppBundle\GatewaySDKPhp\Model\RequestInterface
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files
+# AppBundle\GatewaySDKPhp\Model\RequestInterface
 {: .no_toc }
 
 
@@ -24,32 +24,25 @@ nav_order: 1
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | files |  |
 
 
 ## Methods
 
-### `public getFiles()`
+### `public abstract getApiName()`
 
-*returns* void
-
-A short description
-
-### `public setFiles(array $files)`
-
-*returns* void
+*returns* string
 
 A short description
 
-### `public buildParameters()`
+### `public abstract setBodyParameters(array $params)`
 
-*returns* void
+*returns* self
 
 A short description
 
-### `public usesBuildParametersTrait( $var)`
+### `public abstract getBodyParameters()`
 
-*returns* void
+*returns* array
 
 A short description
 

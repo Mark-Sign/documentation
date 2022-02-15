@@ -1,16 +1,15 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\Model\Response
+title: AppBundle\GatewaySDKPhp\Model\ResponseInterface
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\Model\Response
+# AppBundle\GatewaySDKPhp\Model\ResponseInterface
 {: .no_toc }
 
-Implements `AppBundle\GatewaySDKPhp\Model\ResponseInterface`
-{: .fw-300 .fs-6 }
+
 
 <details open markdown="block">
   <summary>
@@ -25,42 +24,35 @@ Implements `AppBundle\GatewaySDKPhp\Model\ResponseInterface`
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| private |  | response |  |
 
 
 ## Methods
 
-### `public __construct(Symfony\Contracts\HttpClient\ResponseInterface $response)`
-
-*returns* void
-
-A short description
-
-### `public getStatusCode()`
+### `public abstract getStatusCode()`
 
 *returns* int
 
 A short description
 
-### `public getContent()`
+### `public abstract getContent()`
 
 *returns* string
 
 A short description
 
-### `public toArray()`
+### `public abstract toArray()`
 
 *returns* array
 
 A short description
 
-### `public getHeaders()`
+### `public abstract getHeaders()`
 
 *returns* array
 
 A short description
 
-### `public getHeader(string $headerName)`
+### `public abstract getHeader(string $headerName)`
 
 *returns* string
 
