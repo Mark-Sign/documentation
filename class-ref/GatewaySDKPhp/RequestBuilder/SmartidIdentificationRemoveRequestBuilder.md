@@ -9,7 +9,7 @@ nav_order: 1
 # AppBundle\GatewaySDKPhp\RequestBuilder\SmartidIdentificationRemoveRequestBuilder
 {: .no_toc }
 
-Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`
+Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`
 {: .fw-300 .fs-6 }
 
 <details open markdown="block">
@@ -25,53 +25,20 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | sessionId |  |
-| protected |  | accessToken |  |
-| protected |  | apiKey |  |
-| protected |  | bodyParams |  |
+| protected | String | sessionId | Response token from initialize authentication or signing processes |
 
 
 ## Methods
 
 ### `public withSessionId(string $sessionId)`
 
-*returns* void
+*returns* self
 
-A short description
-
-### `public withAccessToken(string $accessToken)`
-
-*returns* void
-
-A short description
+Sets `sessionId`
 
 ### `public createRequest()`
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
-
-### `public withApiKey(string $apiKey)`
-
-*returns* AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
-
-A short description
-
-### `protected validateParameters(array $requiredParams)`
-
-*returns* void
-
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with `[postRequest](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request)` method.
 

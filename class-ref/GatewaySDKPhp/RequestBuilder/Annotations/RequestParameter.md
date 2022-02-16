@@ -24,8 +24,5 @@ nav_order: 1
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| public |  | name |  |
-
-
-## Methods
+| public | String | name | Holds name parameter of the annotaation |
 

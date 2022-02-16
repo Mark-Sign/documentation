@@ -19,7 +19,7 @@ nav_order: 4
 {:toc}
 </details>
 
-This API checks the status of the signing process initialized by [Initialize signing via smart id](/documentation/api-references/smartId/apiSmartidInitSigning.md#initialize-signing-via-smart-id) request.
+This API checks the status of the signing process initialized by [Initialize signing via smart id](/documentation/api-references/smartId/apiSmartidInitSigning.html#initialize-signing-via-smart-id) request.
 
 ## Endpoint
 
@@ -48,7 +48,7 @@ This API checks the status of the signing process initialized by [Initialize sig
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| token | Mandatory | String | Token that is being sent as a response of [Initialize signing via smart id](/documentation/api-references/smartId/apiSmartidInitSigning.md#initialize-signing-via-smart-id) |
+| token | Mandatory | String | Token that is being sent as a response of [Initialize signing via smart id](/documentation/api-references/smartId/apiSmartidInitSigning.html#initialize-signing-via-smart-id) |
 
 ## Request body parameter description
 

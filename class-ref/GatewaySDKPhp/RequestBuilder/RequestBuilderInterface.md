@@ -20,23 +20,18 @@ nav_order: 1
 {:toc}
 </details>
 
-## Properties
-
-| Visibility | Type | Name | Description |
-| :--- | :--- | :--- | :--- |
-
 
 ## Methods
 
-### `public abstract withApiKey(string $secret)`
+### `public withAccessToken(string $accessToken)`
 
 *returns* self
 
-A short description
+Will set `accessToken`
 
-### `public abstract createRequest()`
+### `public createRequest()`
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
+Will create and return `AppBundle\GatewaySDKPhp\Model\RequestInterface`
 

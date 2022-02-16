@@ -24,46 +24,42 @@ nav_order: 1
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| private |  | apiKey |  |
-| private |  | connector |  |
-| private |  | logger |  |
+| private | String | accessToken | API access token |
+| private | [`AppBundle\GatewaySDKPhp\ConnectorInterface`](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html) | connector | Connector that will be used to request API |
+| private | `Psr\Log\LoggerInterface` | logger | PSR compatible logger |
 
 
 ## Methods
 
-### `public __construct(string $apiKey, Psr\Log\LoggerInterface $logger, string $locale)`
+### `public __construct(string $accessToken, Psr\Log\LoggerInterface $logger, string $locale)`
 
 *returns* void
 
-A short description
+Constructs the object
 
 ### `public getRequestBuilder(string $apiName)`
 
 *returns* void
 
-A short description
 
 ### `public getSignDocumentSmartIdRequestBuilder()`
 
 *returns* AppBundle\GatewaySDKPhp\RequestBuilder\SignDocumentSmartIdRequestBuilder
 
-A short description
 
 ### `public postRequest(AppBundle\GatewaySDKPhp\Model\RequestInterface $request)`
 
 *returns* void
 
-A short description
+Makes API request through `connector`
 
 ### `private getConnector()`
 
 *returns* AppBundle\GatewaySDKPhp\ConnectorInterface
 
-A short description
 
 ### `private hydrateRequestBuilder(AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface $requestBuilder)`
 
 *returns* void
 
-A short description
 

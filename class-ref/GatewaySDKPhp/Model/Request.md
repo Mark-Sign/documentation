@@ -25,8 +25,8 @@ Implements `AppBundle\GatewaySDKPhp\Model\RequestInterface`
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| private |  | apiName |  |
-| private |  | body |  |
+| private | String | apiName | Name alias of API |
+| private | Array | body | Request parameters |
 
 
 ## Methods
@@ -35,23 +35,19 @@ Implements `AppBundle\GatewaySDKPhp\Model\RequestInterface`
 
 *returns* self
 
-A short description
 
 ### `public getApiName()`
 
 *returns* string
 
-A short description
 
 ### `public setBodyParameters(array $params)`
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
 
 ### `public getBodyParameters()`
 
 *returns* array
 
-A short description
 

@@ -9,7 +9,7 @@ nav_order: 1
 # AppBundle\GatewaySDKPhp\RequestBuilder\DocumentFileValidationRequestBuilder
 {: .no_toc }
 
-Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`
+Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`
 {: .fw-300 .fs-6 }
 
 <details open markdown="block">
@@ -25,11 +25,7 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | accessToken |  |
-| protected |  | file |  |
-| protected |  | apiKey |  |
-| protected |  | bodyParams |  |
-
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/FileUpload.html) | file | File for request |
 
 ## Methods
 
@@ -37,41 +33,11 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
-
-### `public withAccessToken(string $accessToken)`
-
-*returns* self
-
-A short description
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with `[postRequest](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request)` method.
 
 ### `public withFile(AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload $file)`
 
 *returns* self
 
-A short description
-
-### `public withApiKey(string $apiKey)`
-
-*returns* AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
-
-A short description
-
-### `protected validateParameters(array $requiredParams)`
-
-*returns* void
-
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
+Sets `file` for request
 

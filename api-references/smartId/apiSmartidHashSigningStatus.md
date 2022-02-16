@@ -19,7 +19,7 @@ nav_order: 6
 {:toc}
 </details>
 
-This API checks the status of the hash signing process initialized by [Initialize hash signing via smart id](/documentation/api-references/smartId/apiSmartidInitHashSigning.md#initialize-hash-signing-via-smart-id) request.
+This API checks the status of the hash signing process initialized by [Initialize hash signing via smart id](/documentation/api-references/smartId/apiSmartidInitHashSigning.html#initialize-hash-signing-via-smart-id) request.
 
 ## Endpoint
 

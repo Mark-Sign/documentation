@@ -24,84 +24,62 @@ nav_order: 1
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | filename |  |
-| protected |  | name |  |
-| protected |  | content |  |
-| protected |  | digest |  |
-| protected |  | callbackUrl |  |
+| protected | String | filename | Name of the file, will be set to 'filename' in request body |
+| protected | String | name | Name of the file, will be set to 'name' in request body |
+| protected | String | content | Generally base64 encoded content of file |
+| protected | String | digest | Digest of the file |
+| protected | String | callbackUrl | Callback URL, will be set to 'callbackUrl' in request body |
 
 
 ## Methods
 
 ### `public getFilename()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setFilename(string $filename)`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public getName()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setName(string $name)`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public getContent()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setContent(string $content)`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public getCallbackUrl()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setCallbackUrl(string $callbackUrl)`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public getDigest()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setDigest(string $digest)`
 
-*returns* void
+*returns* self
 
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
 

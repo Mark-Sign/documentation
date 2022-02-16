@@ -9,7 +9,7 @@ nav_order: 1
 # AppBundle\GatewaySDKPhp\RequestBuilder\DocumentSignerInviteRequestBuilder
 {: .no_toc }
 
-Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`
+Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`
 {: .fw-300 .fs-6 }
 
 <details open markdown="block">
@@ -25,11 +25,8 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | accessToken |  |
-| protected |  | documentId |  |
-| protected |  | signer |  |
-| protected |  | apiKey |  |
-| protected |  | bodyParams |  |
+| protected | String | documentId | UUID of the document |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Signer`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Signer.html) | signer | Signer to be set in request |
 
 
 ## Methods
@@ -38,47 +35,16 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
-
-### `public withAccessToken(string $accessToken)`
-
-*returns* self
-
-A short description
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with `[postRequest](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request)` method.
 
 ### `public withDocumentId(string $documentId)`
 
 *returns* self
 
-A short description
+Sets `documentId`, UUID of the document
 
 ### `public withSigner(AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Signer $signer)`
 
 *returns* self
 
-A short description
-
-### `public withApiKey(string $apiKey)`
-
-*returns* AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
-
-A short description
-
-### `protected validateParameters(array $requiredParams)`
-
-*returns* void
-
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
-
+Sets `signer` for request

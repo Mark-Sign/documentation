@@ -20,41 +20,35 @@ nav_order: 1
 {:toc}
 </details>
 
-## Properties
-
-| Visibility | Type | Name | Description |
-| :--- | :--- | :--- | :--- |
-
 
 ## Methods
 
-### `public abstract getStatusCode()`
+### `public getStatusCode()`
 
 *returns* int
 
-A short description
+Gets response status code
 
-### `public abstract getContent()`
-
-*returns* string
-
-A short description
-
-### `public abstract toArray()`
-
-*returns* array
-
-A short description
-
-### `public abstract getHeaders()`
-
-*returns* array
-
-A short description
-
-### `public abstract getHeader(string $headerName)`
+### `public getContent()`
 
 *returns* string
 
-A short description
+Gets content from response
 
+### `public toArray()`
+
+*returns* array
+
+Converts the response to array
+
+### `public getHeaders()`
+
+*returns* array
+
+Gets response headers
+
+### `public getHeader(string $headerName)`
+
+*returns* string
+
+Gets response header by name

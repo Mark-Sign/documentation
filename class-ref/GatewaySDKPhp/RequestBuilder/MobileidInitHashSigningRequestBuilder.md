@@ -9,7 +9,7 @@ nav_order: 1
 # AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitHashSigningRequestBuilder
 {: .no_toc }
 
-Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`
+Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`
 {: .fw-300 .fs-6 }
 
 <details open markdown="block">
@@ -25,88 +25,55 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | accessToken |  |
-| protected |  | hash |  |
-| protected |  | phone |  |
-| protected |  | hashAlgorithm |  |
-| protected |  | country |  |
-| protected |  | message |  |
-| protected |  | code |  |
-| protected |  | apiKey |  |
-| protected |  | bodyParams |  |
+| protected | String | hash | Sets the hash to ssign |
+| protected | String | phone | Phone number |
+| protected | String | hashAlgorithm | Hash algorithm. Possible values: SHA256 or SHA512 |
+| protected | String | country | Signer's country code: LT, EE |
+| protected | String | message | Message to be displayed on phone screen |
+| protected | String | code | Personal code |
 
 
 ## Methods
 
-### `public withAccessToken(string $accessToken)`
-
-*returns* void
-
-A short description
-
 ### `public withHash(string $hash)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `hash`
 
 ### `public withPhone(string $phone)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `phone`
 
 ### `public withHashAlgorithm(string $hashAlgorithm)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `hashAlgorithm`
 
 ### `public withCountry(string $country)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `country`
 
 ### `public withMessage(string $message)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `message`
 
 ### `public withCode(string $code)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `code`
 
 ### `public createRequest()`
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
-
-### `public withApiKey(string $apiKey)`
-
-*returns* AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
-
-A short description
-
-### `protected validateParameters(array $requiredParams)`
-
-*returns* void
-
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with `[postRequest](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request)` method.
 

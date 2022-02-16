@@ -9,7 +9,7 @@ nav_order: 1
 # AppBundle\GatewaySDKPhp\RequestBuilder\DocumentUploadRequestBuilder
 {: .no_toc }
 
-Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`
+Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`
 {: .fw-300 .fs-6 }
 
 <details open markdown="block">
@@ -25,12 +25,9 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | accessToken |  |
-| protected |  | access |  |
-| protected |  | file |  |
-| protected |  | signers |  |
-| protected |  | apiKey |  |
-| protected |  | bodyParams |  |
+| protected | String | access | Document access. Possible values: public, private |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/FileUpload.html) | file | File for request |
+| protected | Array of [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Signer`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Signer.html) | signers | Signer's who will be invited to perform operations on the document |
 
 
 ## Methods
@@ -39,13 +36,7 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
-
-### `public withAccessToken(string $accessToken)`
-
-*returns* self
-
-A short description
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with `[postRequest](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request)` method.
 
 ### `public withAccess(string $access)`
 
@@ -57,35 +48,11 @@ A short description
 
 *returns* self
 
-A short description
+Sets `file` for request
 
 ### `public withSigners(array $signers)`
 
 *returns* self
 
-A short description
-
-### `public withApiKey(string $apiKey)`
-
-*returns* AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
-
-A short description
-
-### `protected validateParameters(array $requiredParams)`
-
-*returns* void
-
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
+Sets `signers` array
 

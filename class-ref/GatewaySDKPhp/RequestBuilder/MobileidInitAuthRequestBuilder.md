@@ -9,7 +9,7 @@ nav_order: 1
 # AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitAuthRequestBuilder
 {: .no_toc }
 
-Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`
+Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`
 {: .fw-300 .fs-6 }
 
 <details open markdown="block">
@@ -25,95 +25,62 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | accessToken |  |
-| protected |  | phone |  |
-| protected |  | code |  |
-| protected |  | language |  |
-| protected |  | message |  |
-| protected |  | messageFormat |  |
-| protected |  | peps |  |
-| protected |  | sanctions |  |
-| protected |  | apiKey |  |
-| protected |  | bodyParams |  |
+| protected | String | phone | Phone number |
+| protected | String | code | Personal code |
+| protected | String | language | Language for messages to be displayed phone screen (default: LIT, other: ENG, RUS, EST) |
+| protected | String | message | Message to be displayed on phone screen |
+| protected | String | messageFormat | Format of the message which is displayed on the phone screen. Possible values: GSM-7 (default), UCS-2. Max characters count for GSM-7 and UCS-2 is 40 and 20 characters respectively |
+| protected | Boolean | peps | Whether to check PEPs information |
+| protected | Boolean | sanctions | Whether to check sanctions information |
 
 
 ## Methods
 
-### `public withAccessToken(string $accessToken)`
-
-*returns* void
-
-A short description
-
 ### `public withPhone(string $phone)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `phone`
 
 ### `public withCode(string $code)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `code`
 
 ### `public withLanguage(string $language)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `language`
 
 ### `public withMessage(string $message)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `message`
 
 ### `public withMessageFormat(string $messageFormat)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `messageFormat`
 
 ### `public withPeps(bool $peps)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `peps`
 
 ### `public withSanctions(bool $sanctions)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `sanctions`
 
 ### `public createRequest()`
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
-
-### `public withApiKey(string $apiKey)`
-
-*returns* AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
-
-A short description
-
-### `protected validateParameters(array $requiredParams)`
-
-*returns* void
-
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with `[postRequest](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request)` method.
 

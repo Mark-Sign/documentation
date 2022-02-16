@@ -25,7 +25,7 @@ Implements `AppBundle\GatewaySDKPhp\Model\ResponseInterface`
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| private |  | response |  |
+| private | `Symfony\Contracts\HttpClient\ResponseInterface` | response |  |
 
 
 ## Methods
@@ -34,35 +34,33 @@ Implements `AppBundle\GatewaySDKPhp\Model\ResponseInterface`
 
 *returns* void
 
-A short description
-
 ### `public getStatusCode()`
 
 *returns* int
 
-A short description
+Gets response status code
 
 ### `public getContent()`
 
 *returns* string
 
-A short description
+Gets content from response
 
 ### `public toArray()`
 
 *returns* array
 
-A short description
+Converts the response to array
 
 ### `public getHeaders()`
 
 *returns* array
 
-A short description
+Gets response headers
 
 ### `public getHeader(string $headerName)`
 
 *returns* string
 
-A short description
+Gets response header by name
 

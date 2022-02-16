@@ -20,29 +20,21 @@ nav_order: 1
 {:toc}
 </details>
 
-## Properties
-
-| Visibility | Type | Name | Description |
-| :--- | :--- | :--- | :--- |
-
 
 ## Methods
 
-### `public abstract getApiName()`
+### `public getApiName()`
 
 *returns* string
 
-A short description
 
-### `public abstract setBodyParameters(array $params)`
+### `public setBodyParameters(array $params)`
 
 *returns* self
 
-A short description
 
-### `public abstract getBodyParameters()`
+### `public getBodyParameters()`
 
 *returns* array
 
-A short description
 

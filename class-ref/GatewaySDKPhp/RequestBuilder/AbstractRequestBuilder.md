@@ -25,27 +25,21 @@ Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | apiKey |  |
-| protected |  | bodyParams |  |
+| protected | String | accessToken | Access token to be used in API |
+| protected | Array | bodyParams | Request parameters |
 
 
 ## Methods
 
-### `public withApiKey(string $apiKey)`
+### `public withAccessToken(string $accessToken)`
 
 *returns* AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
 
-A short description
+Sets `accessToken`
 
 ### `protected validateParameters(array $requiredParams)`
 
-*returns* void
+*returns* self
 
-A short description
-
-### `public abstract createRequest()`
-
-*returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
-
-A short description
+Sets `bodyParams`
 

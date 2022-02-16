@@ -24,32 +24,17 @@ nav_order: 1
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | files |  |
+| protected | Array of [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/FileUpload.html) | files |  |
 
 
 ## Methods
 
 ### `public getFiles()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setFiles(array $files)`
 
-*returns* void
-
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
+*returns* self
 

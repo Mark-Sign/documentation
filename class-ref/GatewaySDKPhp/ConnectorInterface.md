@@ -20,17 +20,11 @@ nav_order: 1
 {:toc}
 </details>
 
-## Properties
-
-| Visibility | Type | Name | Description |
-| :--- | :--- | :--- | :--- |
-
 
 ## Methods
 
-### `public abstract postRequest(AppBundle\GatewaySDKPhp\Model\RequestInterface $request)`
+### `public postRequest(AppBundle\GatewaySDKPhp\Model\RequestInterface $request)`
 
-*returns* void
+*returns* AppBundle\GatewaySDKPhp\Model\ResponseInterface
 
-A short description
 

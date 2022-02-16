@@ -9,7 +9,7 @@ nav_order: 1
 # AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitAuthRequestBuilder
 {: .no_toc }
 
-Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`
+Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`
 {: .fw-300 .fs-6 }
 
 <details open markdown="block">
@@ -25,81 +25,48 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | accessToken |  |
-| protected |  | code |  |
-| protected |  | country |  |
-| protected |  | message |  |
-| protected |  | peps |  |
-| protected |  | sanctions |  |
-| protected |  | apiKey |  |
-| protected |  | bodyParams |  |
+| protected | String | code | Personal code |
+| protected | String | country | Signer's country code: LT, EE |
+| protected | String | message | Message to be displayed on phone screen |
+| protected | Boolean | peps | Whether to check PEPs information |
+| protected | Boolean | sanctions | Whether to check sanctions information |
 
 
 ## Methods
 
-### `public withAccessToken(string $accessToken)`
-
-*returns* void
-
-A short description
-
 ### `public withCode(string $code)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `code`
 
 ### `public withCountry(string $country)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `country`
 
 ### `public withMessage(string $message)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `message`
 
 ### `public withPeps(bool $peps)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `peps`
 
 ### `public withSanctions(bool $sanctions)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `sanctions`
 
 ### `public createRequest()`
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
-
-### `public withApiKey(string $apiKey)`
-
-*returns* AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
-
-A short description
-
-### `protected validateParameters(array $requiredParams)`
-
-*returns* void
-
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with `[postRequest](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request)` method.
 

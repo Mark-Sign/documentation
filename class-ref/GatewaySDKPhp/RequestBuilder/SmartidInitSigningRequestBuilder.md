@@ -9,7 +9,7 @@ nav_order: 1
 # AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitSigningRequestBuilder
 {: .no_toc }
 
-Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`
+Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`
 {: .fw-300 .fs-6 }
 
 <details open markdown="block">
@@ -25,137 +25,104 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br> Imp
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | accessToken |  |
-| protected |  | type |  |
-| protected |  | country |  |
-| protected |  | message |  |
-| protected |  | code |  |
-| protected |  | signaturePosition |  |
-| protected |  | signaturePage |  |
-| protected |  | certificateLevel |  |
-| protected |  | peps |  |
-| protected |  | sanctions |  |
-| protected |  | pdf |  |
-| protected |  | adoc |  |
-| protected |  | asice |  |
-| protected |  | bdoc |  |
-| protected |  | apiKey |  |
-| protected |  | bodyParams |  |
+| protected | String | type | Document format. Possible values: pdf, adoc, bdoc, asice |
+| protected | String | country | Signer's country code: LT, EE |
+| protected | String | message | Message to be displayed on phone screen |
+| protected | String | code | Personal code |
+| protected | String | signaturePosition | Position of a visible signature in the document. Possible values: auto, left_top, left_bottom, right_top, right_bottom. default results in invisible signature |
+| protected | String | signaturePage | Page of a visible signature (pdf annotation) in the pdf document. Possible values: first_page, last_page. Default: last_page |
+| protected | String | certificateLevel | Requested SK Smart-ID certificate level. Possible values: QSCD, QUALIFIED. Defaults to QSCD |
+| protected | Boolean | peps | Whether to check PEPs information |
+| protected | Boolean | sanctions | Whether to check sanctions information |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | pdf | PDF files object |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | adoc | ADOC files object |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | asice | ASICE files object |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | bdoc | BDOC files object |
 
 
 ## Methods
 
-### `public withAccessToken(string $accessToken)`
-
-*returns* void
-
-A short description
-
 ### `public withType(string $type)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `type`
 
 ### `public withCountry(string $country)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `country`
 
 ### `public withMessage(string $message)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `message`
 
 ### `public withCode(string $code)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `code`
 
 ### `public withSignaturePosition(string $signaturePosition)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `signaturePosition`
 
 ### `public withSignaturePage(string $signaturePage)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `signaturePage`
 
 ### `public withCertificateLevel(string $certificateLevel)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `certificate_level`
 
 ### `public withPeps(bool $peps)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `peps`
 
 ### `public withSanctions(bool $sanctions)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `sanctions`
 
 ### `public withPdf(AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files $pdf)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `pdf` object
 
 ### `public withAdoc(AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files $adoc)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `adoc` object
 
 ### `public withAsice(AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files $asice)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `asice` Object
 
 ### `public withBdoc(AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files $bdoc)`
 
-*returns* void
+*returns* self
 
-A short description
+Sets `bdoc` object
 
 ### `public createRequest()`
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-A short description
-
-### `public withApiKey(string $apiKey)`
-
-*returns* AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
-
-A short description
-
-### `protected validateParameters(array $requiredParams)`
-
-*returns* void
-
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with `[postRequest](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request)` method.
 

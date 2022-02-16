@@ -24,84 +24,62 @@ nav_order: 1
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected |  | name |  |
-| protected |  | surname |  |
-| protected |  | email |  |
-| protected |  | successUrl |  |
-| protected |  | noEmail |  |
+| protected | String | name | Signer's name |
+| protected | String | surname | Signer's surname |
+| protected | String | email | Signer's email |
+| protected | String | successUrl | Document upload success redirection URL |
+| protected | Boolean | noEmail | If `true` no mail would be sent to signer. Default: `false` |
 
 
 ## Methods
 
 ### `public getName()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setName(string $name)`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public getSurname()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setSurname(string $surname)`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public getEmail()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setEmail(string $email)`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public getSuccessUrl()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setSuccessUrl(string $successUrl)`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public getNoEmail()`
 
-*returns* void
+*returns* self
 
-A short description
 
 ### `public setNoEmail(bool $noEmail)`
 
-*returns* void
+*returns* self
 
-A short description
-
-### `public buildParameters()`
-
-*returns* void
-
-A short description
-
-### `public usesBuildParametersTrait( $var)`
-
-*returns* void
-
-A short description
 
