@@ -7,7 +7,7 @@ has_toc: true
 nav_order: 1
 ---
 
-# Initialize Authentication
+# Initialize authentication via mobile id
 {: .no_toc }
 
 <details open markdown="block">
@@ -19,7 +19,7 @@ nav_order: 1
 {:toc}
 </details>
 
-Short description
+This API initializes authentication via mobile id and provides a token to use in other requests.
 
 ## Endpoint
 
@@ -50,14 +50,14 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
-| phone | Mandatory | String | Description |
-| code | Mandatory | String | Description |
-| language | Mandatory | String | Description |
-| message | Mandatory | String | Description |
-| message_format | Mandatory | String | Description |
-| peps | Mandatory | Boolean | Description |
-| sanctions | Mandatory | Boolean | Description |
+| access_token | Mandatory | String | API Access Token |
+| phone | Mandatory | String | Mobile phone number for which authentication is being initialized |
+| code | Mandatory | String | Personal code related to the phone number |
+| language | Optional | String | Language for messages displayed on the phone screen (default: LIT, other: ENG, RUS, EST) |
+| message | Optional | String | Message to be displayed on the phone screen. |
+| message_format | Optional | String | Format of the message which is displayed on the phone screen. Possible values: GSM-7 (default), UCS-2. Max characters count for GSM-7 and UCS-2 is 40 and 20 characters respectively. |
+| peps | Optional | Boolean | Whether to check PEPs information, default is `false` |
+| sanctions | Optional | Boolean | Whether to check sanctions information, default is `false` |
 
 
 
@@ -67,58 +67,27 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| certificate | Array of Objects | Description |
-| code | String | Description |
-| token | String | Description |
-| control_code | String | Description |
-
-### Response certificate object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| name | String | Description |
-| subject | Array of Objects | Description |
-| issuer | Array of Objects | Description |
-| valid_from | String | Description |
-| valid_to | String | Description |
-| value | String | Description |
-
-### Response subject object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| country | String | Description |
-| organisation | NULL | Description |
-| organisation_unit | NULL | Description |
-| common_name | String | Description |
-| surname | String | Description |
-| name | String | Description |
-| serial_number | String | Description |
-
-### Response issuer object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| country | String | Description |
-| organisation | String | Description |
-| common_name | String | Description |
-
+| status | String | Status of the request, `ok` in this case |
+| certificate | Object | Certificate information of the provided phone number |
+| code | String | Personal code provided in hte request |
+| token | String | Unique token to be used in future request |
+| control_code | String | Verification code |
 
 
 ### Failed response
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
-| error_code | Integer | Description |
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
+| error_code | Integer | Unique code for the error |
 
 
 
 ## Sample request
 
 ```
+
 POST /en/mobile/login.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -133,6 +102,7 @@ Content-Type: application/json
   "peps": true,
   "sanctions": true
 }
+
 ```
 
 ## Sample response
@@ -140,6 +110,7 @@ Content-Type: application/json
 ### Sample success response
 
 ```
+
 {
   "status": "ok",
   "certificate": {
@@ -166,6 +137,7 @@ Content-Type: application/json
   "token": "381ed84f-0851-ce1e-a048-fa1e13a53bba",
   "control_code": "6223"
 }
+
 ```
 
 Please note that some json values have been truncated in the previous example.
@@ -173,11 +145,13 @@ Please note that some json values have been truncated in the previous example.
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Invalid parameter [message_format]: Invalid message format",
   "error_code": 40001
 }
+
 ```
 
 ## Implementation
@@ -185,6 +159,7 @@ Please note that some json values have been truncated in the previous example.
 ### CURL
 
 ```
+
 curl --location --request POST 'https://app.marksign.local/en/mobile/login.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -197,6 +172,7 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/login.json'
   "peps": true,
   "sanctions": true
 }'
+
 ```
 
 ### Using php-client
@@ -204,6 +180,8 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/login.json'
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitAuthRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitAuthRequestBuilder.html) as request builder.
 
 ```
+
+/**
  * The token in response ($initAuthResArray['token'] in this example),
  * might need to be saved for future purposes.
  */

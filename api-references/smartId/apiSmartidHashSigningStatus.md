@@ -19,7 +19,7 @@ nav_order: 6
 {:toc}
 </details>
 
-Short description
+This API checks the status of the hash signing process initialized by [Initialize hash signing via smart id](/documentation/api-references/smartId/apiSmartidInitHashSigning.md#initialize-hash-signing-via-smart-id) request.
 
 ## Endpoint
 
@@ -54,7 +54,7 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
+| access_token | Mandatory | String | API Access Token |
 
 
 
@@ -64,23 +64,21 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-
-
+| status | String | Status of the request, `ok` in this case |
+| signature_value | String | Signature value |
 
 ### Failed response
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
+| status | String | Status of the request, `error` in this case |
 | message | String | Description |
 | error_code | Integer | Description |
-
-
 
 ## Sample request
 
 ```
+
 POST /en/smartid/sign/hash/status/c2d86cd3-ee0e-d5d2-2307-91ec420a06d0.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -88,6 +86,7 @@ Content-Type: application/json
 {
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
 }
+
 ```
 
 ## Sample response
@@ -95,19 +94,23 @@ Content-Type: application/json
 ### Sample success response
 
 ```
+
 {
   "status": "waiting"
 }
+
 ```
 
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Session for given token was not found",
   "error_code": 40402
 }
+
 ```
 
 ## Implementation
@@ -115,11 +118,13 @@ Content-Type: application/json
 ### CURL
 
 ```
+
 curl --location --request POST 'https://app.marksign.local/en/smartid/sign/hash/status/c2d86cd3-ee0e-d5d2-2307-91ec420a06d0.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
 }'
+
 ```
 
 ### Using php-client
@@ -127,8 +132,9 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/sign/hash/
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidHashSigningProcessStatusRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidHashSigningProcessStatusRequestBuilder.html) as request builder.
 
 ```
+
 /**
- * The hashSignToken was found from the response of 'initialize hash signing authentication via smart id' request.
+ * The hashSignToken was found from the response of 'Initialize hash signing via smart id' request.
  * The following is a dummy to use as example.
  */
 $hashSignToken = 'e654322d-9c20-4630-bc26-16e11d8243ff';
@@ -139,4 +145,5 @@ $hashSignStatReq = (new SmartidHashSigningProcessStatusRequestBuilder)
 $hashSignStatRes = $client->postRequest($hashSignStatReq);
 $hashSignStatResArray = $hashSignStatRes->toArray(false);
 var_dump($hashSignStatResArray);
+
 ```

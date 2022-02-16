@@ -7,7 +7,7 @@ has_toc: true
 nav_order: 7
 ---
 
-# Remove Identification Session
+# Remove session initialized by mobile id
 {: .no_toc }
 
 <details open markdown="block">
@@ -19,7 +19,7 @@ nav_order: 7
 {:toc}
 </details>
 
-Short description
+This API destroys the session initialed by authentication or signing processes via mobile id.
 
 ## Endpoint
 
@@ -48,13 +48,13 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| sessionId | Mandatory | String | Description |
+| sessionId | Mandatory | String | Token that is being sent as a response of from the response of [Initialize authentication via mobile id](/documentation/api-references/mobileId/apiMobileidInitAuth.html#successful-response) request or [Initialize signing via mobile id](/documentation/api-references/mobileId/apiMobileidInitSigning.html#successful-response) request or [Initialize hash signing via mobile id](/documentation/api-references/mobileId/apiMobileidInitHashSigning.html#successful-response) request |
 
 ## Request body parameter description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
+| access_token | Mandatory | String | API Access Token |
 
 
 
@@ -64,7 +64,7 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
+| status | String | Status of the request, `ok` in this case |
 
 
 
@@ -72,14 +72,15 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
 
 
 
 ## Sample request
 
 ```
+
 DELETE /en/api/mobile/session/320a35af-19c9-eecd-5f7e-8725393bd955 HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -87,6 +88,7 @@ Content-Type: application/json
 {
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
 }
+
 ```
 
 ## Sample response
@@ -94,18 +96,22 @@ Content-Type: application/json
 ### Sample success response
 
 ```
+
 {
   "status": "ok"
 }
+
 ```
 
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Request number is invalid"
 }
+
 ```
 
 ## Implementation
@@ -113,11 +119,13 @@ Content-Type: application/json
 ### CURL
 
 ```
+
 curl --location --request DELETE 'https://app.marksign.local/en/api/mobile/session/320a35af-19c9-eecd-5f7e-8725393bd955' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
 }'
+
 ```
 
 ### Using php-client
@@ -125,9 +133,12 @@ curl --location --request DELETE 'https://app.marksign.local/en/api/mobile/sessi
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidIdentificationRemoveRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidIdentificationRemoveRequestBuilder.html) as request builder.
 
 ```
+
+/**
  * The sessionId is the value of 'token' found either
- * from the response of 'initialize authentication via mobile id' request
- * or from the response of 'initialize hash signing authentication via mobile id' request
+ * from the response of 'Initialize authentication via mobile id' request
+ * or 'Initialize signing via mobile id' request
+ * or 'Initialize hash signing via mobile id' request
  * The following is a dummy to use as example.
  */
 $sessionId = '98ead4e1-015b-4968-bdcd-03797d1a4bea';
@@ -138,4 +149,5 @@ $indentRemReq = (new MobileidIdentificationRemoveRequestBuilder)
 $indentRemRes = $client->postRequest($indentRemReq);
 $indentRemResArray = $indentRemRes->toArray(false);
 var_dump($indentRemResArray);
+
 ```

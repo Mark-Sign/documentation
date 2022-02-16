@@ -7,7 +7,7 @@ has_toc: true
 nav_order: 3
 ---
 
-# Initialize Signing
+# Initialize signing via mobile id
 {: .no_toc }
 
 <details open markdown="block">
@@ -19,7 +19,7 @@ nav_order: 3
 {:toc}
 </details>
 
-Short description
+This API initializes document signing/identification with qualified electronic signature stored on SIM card.
 
 ## Endpoint
 
@@ -50,30 +50,34 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
-| type | Mandatory | String | Description |
-| phone | Mandatory | String | Description |
-| message | Mandatory | String | Description |
-| message_format | Mandatory | String | Description |
-| code | Mandatory | String | Description |
-| signature_position | Mandatory | String | Description |
-| signature_page | Mandatory | String | Description |
-| peps | Mandatory | Boolean | Description |
-| sanctions | Mandatory | Boolean | Description |
-| pdf | Mandatory | Array of Objects | Description |
+| access_token | Mandatory | String | API Access Token |
+| type | Mandatory | String | Type of the file to be signed. Possible values: pdf, adoc, bdoc, asice |
+| phone | Mandatory | String | Phone number of the signer |
+| message | Optional | String | Message displayed on the phone screen |
+| message_format | Optional | String | Format of the message which is displayed on the phone screen. Possible values: GSM-7 (default), UCS-2. Max characters count for GSM-7 and UCS-2 is 40 and 20 characters respectively |
+| code | Mandatory | String | Personal code related to the phone number |
+| signature_position | Optional | String | Position of a visible signature (pdf annotation) in the pdf document. Possible values: auto, left_top, left_bottom, right_top, right_bottom. Unset value is equal to invisible signature |
+| signature_page | Optional | String | Page of a visible signature (pdf annotation) in the pdf document. Possible values: first_page, last_page. Default value is last_page |
+| peps | Optional | Boolean | Whether to check PEPs information, default is `false` |
+| sanctions | Optional | Boolean | Whether to check sanctions information, default is `false` |
+| pdf | Any one of pdf/asice/adoc/bdoc is mandatory | Object | Follow [Request pdf/asice/adoc/bdoc object description](#request-pdfasiceadocbdoc-object-description) |
+| asice | Any one of pdf/asice/adoc/bdoc is mandatory | Object | Follow [Request pdf/asice/adoc/bdoc object description](#request-pdfasiceadocbdoc-object-description) |
+| adoc | Any one of pdf/asice/adoc/bdoc is mandatory | Object | Follow [Request pdf/asice/adoc/bdoc object description](#request-pdfasiceadocbdoc-object-description) |
+| bdoc | Any one of pdf/asice/adoc/bdoc is mandatory | Object | Follow [Request pdf/asice/adoc/bdoc object description](#request-pdfasiceadocbdoc-object-description) |
 
-### Request pdf object description
+### Request pdf/asice/adoc/bdoc object description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| files | Mandatory | Object | Description |
+| files | Mandatory | Array of Objects | Follow [Request files object description](#request-files-object-description) |
 
 ### Request files object description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| name | Mandatory | String | Description |
-| content | Mandatory | String | Description |
+| name | Mandatory | String | Name of the file |
+| content | Mandatory | String | Base64 encoded file content |
+| digest | Optional | String | Digest of the file |
 
 
 
@@ -83,25 +87,24 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| token | String | Description |
-| control_code | String | Description |
-
+| status | String | Status of the request, `ok` in this case |
+| token | String | Unique token to be used in future request |
+| control_code | String | Verification code |
 
 
 ### Failed response
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| token | String | Description |
-| control_code | String | Description |
-
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
+| error_code | Integer | Unique code for the error |
 
 
 ## Sample request
 
 ```
+
 POST /en/mobile/sign.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -126,6 +129,7 @@ Content-Type: application/json
     ]
   }
 }
+
 ```
 
 Please note that some json values have been truncated in the previous example.
@@ -135,21 +139,25 @@ Please note that some json values have been truncated in the previous example.
 ### Sample success response
 
 ```
+
 {
   "status": "ok",
   "token": "e287226b-662b-013b-02cd-ede81a4013ec",
   "control_code": "2049"
 }
+
 ```
 
 ### Sample failed response
 
 ```
+
 {
-  "status": "ok",
-  "token": "1aa8b210-3695-dc7b-bf2e-480e4e6127c8",
-  "control_code": "3291"
+  "status": "error",
+  "message": "Invalid parameter [type]: Invalid type",
+  "error_code": 40001
 }
+
 ```
 
 ## Implementation
@@ -157,6 +165,7 @@ Please note that some json values have been truncated in the previous example.
 ### CURL
 
 ```
+
 curl --location --request POST 'https://app.marksign.local/en/mobile/sign.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -179,6 +188,7 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/sign.json' 
     ]
   }
 }'
+
 ```
 
 Please note that some json values have been truncated in the previous example.
@@ -188,7 +198,10 @@ Please note that some json values have been truncated in the previous example.
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitSigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitSigningRequestBuilder.html) as request builder.
 
 ```
-
+/**
+ * The token in response ($initSignResArray['token'] in this example),
+ * might need to be saved for future purposes.
+ */
 $initSignReq = (new MobileidInitSigningRequestBuilder)
   ->withType('pdf')
   ->withPhone('+37269000366')

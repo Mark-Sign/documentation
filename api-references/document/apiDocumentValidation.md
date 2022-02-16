@@ -7,7 +7,7 @@ has_toc: true
 nav_order: 2
 ---
 
-# Document Validation
+# Document validation
 {: .no_toc }
 
 <details open markdown="block">
@@ -48,13 +48,13 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| documentId | Mandatory | String | Description |
+| documentId | Mandatory | String | Document UUID from response of ["Document upload"](/documentation/api-references/document/apiDocumentUpload.html#response-document-object-description) |
 
 ## Request body parameter description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
+| access_token | Mandatory | String | API Access Token |
 
 
 
@@ -64,137 +64,22 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| data | Array of Objects | Description |
-
-### Response data object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| simpleReport | Array of Objects | Description |
-| diagnosticData | Array of Objects | Description |
-
-### Response simpleReport object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| validationTime | Integer | Description |
-| firstTimestampId | NULL | Description |
-| documentFilename | String | Description |
-| validSignaturesCount | Integer | Description |
-| signatureIdList | Object | Description |
-| timestampIdList | Object | Description |
-| firstSignatureId | NULL | Description |
-| signaturesCount | Integer | Description |
-| jaxbModel | Array of Objects | Description |
-
-### Response signatureIdList object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response timestampIdList object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response jaxbModel object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| validationPolicy | Array of Objects | Description |
-| documentName | String | Description |
-| validSignaturesCount | Integer | Description |
-| signaturesCount | Integer | Description |
-| containerType | NULL | Description |
-| signatureOrTimestamp | Object | Description |
-| semantic | Object | Description |
-| validationTime | Integer | Description |
-
-### Response validationPolicy object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| policyName | String | Description |
-| policyDescription | String | Description |
-
-### Response signatureOrTimestamp object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response semantic object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response diagnosticData object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| DocumentName | String | Description |
-| ValidationDate | String | Description |
-| Signatures | Object | Description |
-| UsedCertificates | Object | Description |
-| UsedRevocations | Object | Description |
-| UsedTimestamps | Object | Description |
-| OriginalDocuments | Object | Description |
-| TrustedLists | Object | Description |
-
-### Response Signatures object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response UsedCertificates object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response UsedRevocations object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response UsedTimestamps object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response OriginalDocuments object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response TrustedLists object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-
+| status | String | Status of the request, `ok` in this case |
+| data | Object | Validation information |
 
 ### Failed response
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
 
 
 
 ## Sample request
 
 ```
+
 POST /en/api/v2/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/validation.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -202,6 +87,7 @@ Content-Type: application/json
 {
   "access_token": "f4b79b72-7587-f417-41f8-2de5a7c87fae"
 }
+
 ```
 
 ## Sample response
@@ -209,6 +95,7 @@ Content-Type: application/json
 ### Sample success response
 
 ```
+
 {
   "status": "ok",
   "data": {
@@ -247,15 +134,18 @@ Content-Type: application/json
     }
   }
 }
+
 ```
 
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Document was not found"
 }
+
 ```
 
 ## Implementation
@@ -263,11 +153,13 @@ Content-Type: application/json
 ### CURL
 
 ```
+
 curl --location --request POST 'https://app.marksign.local/en/api/v2/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/validation.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "f4b79b72-7587-f417-41f8-2de5a7c87fae"
 }'
+
 ```
 
 ### Using php-client
@@ -275,8 +167,9 @@ curl --location --request POST 'https://app.marksign.local/en/api/v2/document/cf
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentValidationRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/DocumentValidationRequestBuilder.html) as request builder.
 
 ```
+
 /**
- * The document id that was found from document upload request.
+ * The document id that was found from "Document upload" request.
  * The following is a dummy to use as example.
  */
 $documentId = 'c66cf14e-f763-9757-3b83-e5e28126a6df';
@@ -287,4 +180,5 @@ $validationReq = (new DocumentValidationRequestBuilder)
 $validationRes = $client->postRequest($validationReq);
 $validationResArray = $validationRes->toArray(false);
 var_dump($validationResArray);
+
 ```

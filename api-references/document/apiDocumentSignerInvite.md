@@ -7,7 +7,7 @@ has_toc: true
 nav_order: 3
 ---
 
-# Document Signer Invite
+# Document signer invite
 {: .no_toc }
 
 <details open markdown="block">
@@ -48,24 +48,24 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| documentId | Mandatory | String | Description |
+| documentId | Mandatory | String | Document UUID from response of ["Document upload"](/documentation/api-references/document/apiDocumentUpload.html#response-document-object-description) |
 
 ## Request body parameter description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
-| signer | Mandatory | Array of Objects | Description |
+| access_token | Mandatory | String | API Access Token |
+| signer | Mandatory | Object | Follow [Request signer object description](#request-signer-object-description) section |
 
 ### Request signer object description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| name | Mandatory | String | Description |
-| surname | Mandatory | String | Description |
-| email | Mandatory | String | Description |
-| successUrl | Mandatory | String | Description |
-| noEmail | Mandatory | Boolean | Description |
+| name | Mandatory | String | Signer's name |
+| surname | Mandatory | String | Signer's surname |
+| email | Mandatory | String | Signer's email |
+| successUrl | Optional | String | Document upload success redirection URL |
+| noEmail | Optional | Boolean | If `true` them email with invitation URL will not be sent to signer (default: `false`) |
 
 
 
@@ -75,17 +75,17 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
-| signers | Object | Description |
+| status | String | Status of the request, `ok` in this case |
+| message | String | Brief status message |
+| signers | Array of Objects | Follow [Response signers object description](#response-signers-object-description) |
 
 ### Response signers object description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| name | String | Description |
-| surname | String | Description |
-| invitationUrl | String | Description |
+| name | String | Signer's name |
+| surname | String | Signer's surname |
+| invitationUrl | String | URL to re-invite this signer. Non null value if `noEmail` is `false`, else `null` |
 
 
 
@@ -93,14 +93,15 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
 
 
 
 ## Sample request
 
 ```
+
 POST /en/api/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/invite-signer.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -115,6 +116,7 @@ Content-Type: application/json
     "noEmail": false
   }
 }
+
 ```
 
 ## Sample response
@@ -122,6 +124,7 @@ Content-Type: application/json
 ### Sample success response
 
 ```
+
 {
   "status": "ok",
   "message": "Invited to sign",
@@ -133,15 +136,18 @@ Content-Type: application/json
     }
   ]
 }
+
 ```
 
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Document was not found"
 }
+
 ```
 
 ## Implementation
@@ -149,6 +155,7 @@ Content-Type: application/json
 ### CURL
 
 ```
+
 curl --location --request POST 'https://app.marksign.local/en/api/document/cff827fc-e70e-167c-4ae5-d388b1b5c264/invite-signer.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -161,6 +168,7 @@ curl --location --request POST 'https://app.marksign.local/en/api/document/cff82
     "noEmail": false
   }
 }'
+
 ```
 
 ### Using php-client
@@ -168,8 +176,9 @@ curl --location --request POST 'https://app.marksign.local/en/api/document/cff82
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentSignerInviteRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/DocumentSignerInviteRequestBuilder.html) as request builder.
 
 ```
+
 /**
- * The document id that was found from document upload request.
+ * The document id that was found from "Document upload" request.
  * The following is a dummy to use as example.
  */
 $documentId = 'c66cf14e-f763-9757-3b83-e5e28126a6df';
@@ -183,4 +192,5 @@ $signerInviteReq = (new DocumentSignerInviteRequestBuilder)
 $signerInviteRes = $client->postRequest($signerInviteReq);
 $signerInviteResArray = $signerInviteRes->toArray(false);
 var_dump($signerInviteResArray);
+
 ```

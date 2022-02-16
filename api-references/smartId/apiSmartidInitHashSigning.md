@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Initialize Authentication Hash Signing
+title: Initialize Hash Signing 
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 5
 ---
 
-# Initialize Authentication Hash Signing
+# Initialize hash signing via smart id
 {: .no_toc }
 
 <details open markdown="block">
@@ -19,7 +19,7 @@ nav_order: 5
 {:toc}
 </details>
 
-Short description
+This API initializes hash signing with qualified electronic signature via smart id.
 
 ## Endpoint
 
@@ -50,12 +50,12 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
-| hash | Mandatory | String | Description |
-| hash_algorithm | Mandatory | String | Description |
-| country | Mandatory | String | Description |
-| message | Mandatory | String | Description |
-| code | Mandatory | String | Description |
+| access_token | Mandatory | String | API Access Token |
+| hash | Mandatory | String | Hash to sign |
+| hash_algorithm | Mandatory | String | SHA256 or SHA512 |
+| country | Mandatory | String | Signer's country code: LT, EE |
+| message | Optional | String | Message to be displayed on the phone screen. |
+| code | Mandatory | String | Personal code related to the phone number |
 
 
 
@@ -65,25 +65,22 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| token | String | Description |
-| control_code | String | Description |
-
-
+| status | String | Status of the request, `ok` in this case |
+| token | String | Unique token to be used in future request |
+| control_code | String | Verification code |
 
 ### Failed response
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
-| error_code | Integer | Description |
-
-
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
+| error_code | Integer | Unique code for the error |
 
 ## Sample request
 
 ```
+
 POST /en/smartid/sign/hash.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -96,6 +93,7 @@ Content-Type: application/json
   "message": "any message",
   "code": "50001018865"
 }
+
 ```
 
 Please note that some json values have been truncated in the previous example.
@@ -105,21 +103,25 @@ Please note that some json values have been truncated in the previous example.
 ### Sample success response
 
 ```
+
 {
   "status": "ok",
   "token": "c2d86cd3-ee0e-d5d2-2307-91ec420a06d0",
   "control_code": "9403"
 }
+
 ```
 
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Invalid parameter [country]: This value is not valid.",
   "error_code": 40001
 }
+
 ```
 
 ## Implementation
@@ -127,6 +129,7 @@ Please note that some json values have been truncated in the previous example.
 ### CURL
 
 ```
+
 curl --location --request POST 'https://app.marksign.local/en/smartid/sign/hash.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -137,6 +140,7 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/sign/hash.
   "message": "any message",
   "code": "50001018865"
 }'
+
 ```
 
 Please note that some json values have been truncated in the previous example.
@@ -146,6 +150,7 @@ Please note that some json values have been truncated in the previous example.
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitHashSigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidInitHashSigningRequestBuilder.html) as request builder.
 
 ```
+
 /**
  * The token in response ($hashSignInitResArray['token'] in this example),
  * might need to be saved for future purposes.
@@ -162,4 +167,5 @@ $hashSignInitReq = (new SmartidInitHashSigningRequestBuilder)
 $hashSignInitRes = $client->postRequest($hashSignInitReq);
 $hashSignInitResArray = $hashSignInitRes->toArray(false);
 var_dump($hashSignInitResArray);
+
 ```

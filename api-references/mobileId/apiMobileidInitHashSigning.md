@@ -7,7 +7,7 @@ has_toc: true
 nav_order: 5
 ---
 
-# Initialize Hash Signing
+# Initialize hash signing via mobile id
 {: .no_toc }
 
 <details open markdown="block">
@@ -19,7 +19,7 @@ nav_order: 5
 {:toc}
 </details>
 
-Short description
+This API initializes hash signing with qualified electronic signature stored on SIM card.
 
 ## Endpoint
 
@@ -50,14 +50,13 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
-| hash | Mandatory | String | Description |
-| phone | Mandatory | String | Description |
-| hash_algorithm | Mandatory | String | Description |
-| country | Mandatory | String | Description |
-| message | Mandatory | String | Description |
-| code | Mandatory | String | Description |
-
+| access_token | Mandatory | String | API Access Token |
+| hash | Mandatory | String | Hash to sign |
+| phone | Mandatory | String | Mobile phone number for which authentication is being initialized |
+| code | Mandatory | String | Personal code related to the phone number |
+| hash_algorithm | Mandatory | String | SHA256 or SHA512 |
+| country | Mandatory | String | Signer's country code: LT, EE |
+| message | Optional | String | Message to be displayed on the phone screen. |
 
 
 ## Response body parameter description
@@ -66,25 +65,25 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| token | String | Description |
-| control_code | String | Description |
-
+| status | String | Status of the request, `ok` in this case |
+| token | String | Unique token to be used in future request |
+| control_code | String | Verification code |
 
 
 ### Failed response
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
-| error_code | Integer | Description |
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
+| error_code | Integer | Unique code for the error |
 
 
 
 ## Sample request
 
 ```
+
 POST /en/mobile/sign/hash.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -98,6 +97,7 @@ Content-Type: application/json
   "message": "any message",
   "code": "60001017705"
 }
+
 ```
 
 ## Sample response
@@ -105,21 +105,25 @@ Content-Type: application/json
 ### Sample success response
 
 ```
+
 {
   "status": "ok",
   "token": "320a35af-19c9-eecd-5f7e-8725393bd955",
   "control_code": "3555"
 }
+
 ```
 
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Invalid parameter [country]: This value is not valid.",
   "error_code": 40001
 }
+
 ```
 
 ## Implementation
@@ -127,6 +131,7 @@ Content-Type: application/json
 ### CURL
 
 ```
+
 curl --location --request POST 'https://app.marksign.local/en/mobile/sign/hash.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -138,6 +143,7 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/sign/hash.j
   "message": "any message",
   "code": "60001017705"
 }'
+
 ```
 
 ### Using php-client
@@ -145,6 +151,8 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/sign/hash.j
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitHashSigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitHashSigningRequestBuilder.html) as request builder.
 
 ```
+
+/**
  * The token in response ($hashSignInitResArray['token'] in this example),
  * might need to be saved for future purposes.
  */

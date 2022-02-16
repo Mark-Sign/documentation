@@ -19,7 +19,7 @@ nav_order: 7
 {:toc}
 </details>
 
-Short description
+This API destroys the session initialed by authentication or signing processes via smart id.
 
 ## Endpoint
 
@@ -48,13 +48,13 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| sessionId | Mandatory | String | Description |
+| sessionId | Mandatory | String | Token that is being sent as a response of from the response of [Initialize authentication via smart id](/documentation/api-references/smartId/apiSmartidInitAuth.html#successful-response) request or [Initialize signing via smart id](/documentation/api-references/smartId/apiSmartidInitSigning.html#successful-response) request or [Initialize hash signing via smart id](/documentation/api-references/smartId/apiSmartidInitHashSigning.html#successful-response) request |
 
 ## Request body parameter description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
+| access_token | Mandatory | String | API Access Token |
 
 
 
@@ -64,7 +64,7 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
+| status | String | Status of the request, `ok` in this case |
 
 
 
@@ -72,14 +72,15 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
 
 
 
 ## Sample request
 
 ```
+
 DELETE /en/api/smartid/session/c2d86cd3-ee0e-d5d2-2307-91ec420a06d0 HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -87,6 +88,7 @@ Content-Type: application/json
 {
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
 }
+
 ```
 
 ## Sample response
@@ -94,18 +96,22 @@ Content-Type: application/json
 ### Sample success response
 
 ```
+
 {
   "status": "ok"
 }
+
 ```
 
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Request number is invalid"
 }
+
 ```
 
 ## Implementation
@@ -113,11 +119,13 @@ Content-Type: application/json
 ### CURL
 
 ```
+
 curl --location --request DELETE 'https://app.marksign.local/en/api/smartid/session/c2d86cd3-ee0e-d5d2-2307-91ec420a06d0' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
 }'
+
 ```
 
 ### Using php-client
@@ -125,6 +133,7 @@ curl --location --request DELETE 'https://app.marksign.local/en/api/smartid/sess
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidIdentificationRemoveRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidIdentificationRemoveRequestBuilder.html) as request builder.
 
 ```
+
 /**
  * The sessionId is the value of 'token' found either
  * from the response of 'initialize authentication via smart id' request
@@ -139,4 +148,5 @@ $indentRemReq = (new SmartidIdentificationRemoveRequestBuilder)
 $indentRemRes = $client->postRequest($indentRemReq);
 $indentRemResArray = $indentRemRes->toArray(false);
 var_dump($indentRemResArray);
+
 ```

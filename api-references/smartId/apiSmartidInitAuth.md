@@ -7,7 +7,7 @@ has_toc: true
 nav_order: 1
 ---
 
-# Initialize Authentication
+# Initialize authentication via smart id
 {: .no_toc }
 
 <details open markdown="block">
@@ -50,12 +50,12 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
-| code | Mandatory | String | Description |
-| country | Mandatory | String | Description |
-| message | Mandatory | String | Description |
-| peps | Mandatory | Boolean | Description |
-| sanctions | Mandatory | Boolean | Description |
+| access_token | Mandatory | String | API Access Token |
+| code | Mandatory | String | Personal code related to the phone number |
+| country | Mandatory | String | Country related to person code: LT, LV, EE |
+| message | Optional | String | Message to be displayed on the phone screen |
+| peps | Optional | Boolean | Whether to check PEPs information, default is `false` |
+| sanctions | Optional | Boolean | Whether to check sanctions information, default is `false` |
 
 
 
@@ -65,25 +65,24 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| token | String | Description |
-| control_code | String | Description |
-
+| status | String | Status of the request, `ok` in this case |
+| token | String | Unique token to be used in future request |
+| control_code | String | Verification code |
 
 
 ### Failed response
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
-| error_code | Integer | Description |
-
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
+| error_code | Integer | Unique code for the error |
 
 
 ## Sample request
 
 ```
+
 POST /en/smartid/login.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -96,6 +95,7 @@ Content-Type: application/json
   "peps": true,
   "sanctions": true
 }
+
 ```
 
 ## Sample response
@@ -103,21 +103,25 @@ Content-Type: application/json
 ### Sample success response
 
 ```
+
 {
   "status": "ok",
   "token": "19f1c829-63f2-eb7f-b473-8bb481298dc2",
   "control_code": "5210"
 }
+
 ```
 
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Invalid parameter [country]: Invalid country code",
   "error_code": 40001
 }
+
 ```
 
 ## Implementation
@@ -125,6 +129,7 @@ Content-Type: application/json
 ### CURL
 
 ```
+
 curl --location --request POST 'https://app.marksign.local/en/smartid/login.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -135,6 +140,7 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/login.json
   "peps": true,
   "sanctions": true
 }'
+
 ```
 
 ### Using php-client
@@ -142,6 +148,7 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/login.json
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitAuthRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidInitAuthRequestBuilder.html) as request builder.
 
 ```
+
 /**
  * The token in response ($initAuthResArray['token'] in this example),
  * might need to be saved for future purposes.
@@ -156,4 +163,5 @@ $initAuthReq = (new SmartidInitAuthRequestBuilder)
 $initAuthRes = $client->postRequest($initAuthReq);
 $initAuthResArray = $initAuthRes->toArray(false);
 var_dump($initAuthResArray);
+
 ```

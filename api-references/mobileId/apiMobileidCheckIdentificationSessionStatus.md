@@ -7,7 +7,7 @@ has_toc: true
 nav_order: 2
 ---
 
-# Check Identification Session Status
+# Check identification session status
 {: .no_toc }
 
 <details open markdown="block">
@@ -19,7 +19,7 @@ nav_order: 2
 {:toc}
 </details>
 
-Short description
+This API chceks status of mobile id identification session using token.
 
 ## Endpoint
 
@@ -48,13 +48,13 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| token | Mandatory | String | Description |
+| token | Mandatory | String | Token that is being sent as a response of [Initialize authentication via mobile id](/documentation/api-references/mobileId/apiMobileidInitAuth.html#successful-response) |
 
 ## Request body parameter description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | Description |
+| access_token | Mandatory | String | API Access Token |
 
 
 
@@ -64,75 +64,29 @@ Short description
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| country | String | Description |
-| certificate | Array of Objects | Description |
-| code | String | Description |
-| name | String | Description |
-| token | String | Description |
-| control_code | String | Description |
-| surname | String | Description |
-| sanctions_data | Object | Description |
-| peps_data | Object | Description |
-
-### Response certificate object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| name | String | Description |
-| subject | Array of Objects | Description |
-| issuer | Array of Objects | Description |
-| valid_from | String | Description |
-| valid_to | String | Description |
-| value | String | Description |
-
-### Response subject object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| country | String | Description |
-| organisation | NULL | Description |
-| organisation_unit | NULL | Description |
-| common_name | String | Description |
-| surname | String | Description |
-| name | String | Description |
-| serial_number | String | Description |
-
-### Response issuer object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| country | String | Description |
-| organisation | String | Description |
-| common_name | String | Description |
-
-### Response sanctions_data object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-### Response peps_data object description
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-
-
-
+| status | String | Status of the authentication session |
+| country | String | Country code |
+| certificate | Object | Certificate information of the provided phone number |
+| code | String | Provided person code |
+| token | String | Unique session token used in the request |
+| control_code | String | Verification code |
+| name | String | Person name for the phone number |
+| surname | String | Person surname for the phone number |
+| sanctions_data | Object | Sanction informatiion |
+| peps_data | Object | PEPs information |
 
 ### Failed response
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| status | String | Description |
-| message | String | Description |
-| error_code | Integer | Description |
-
-
+| status | String | Status of the request, `error` in this case |
+| message | String | Brief message about what is wrong |
+| error_code | Integer | Unique code for the error |
 
 ## Sample request
 
 ```
+
 POST /en/mobile/status/381ed84f-0851-ce1e-a048-fa1e13a53bba.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -140,6 +94,7 @@ Content-Type: application/json
 {
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
 }
+
 ```
 
 ## Sample response
@@ -147,6 +102,7 @@ Content-Type: application/json
 ### Sample success response
 
 ```
+
 {
   "status": "ok",
   "country": "EE",
@@ -178,6 +134,7 @@ Content-Type: application/json
   "sanctions_data": [],
   "peps_data": []
 }
+
 ```
 
 Please note that some json values have been truncated in the previous example.
@@ -185,11 +142,13 @@ Please note that some json values have been truncated in the previous example.
 ### Sample failed response
 
 ```
+
 {
   "status": "error",
   "message": "Session for given token was not found",
   "error_code": 40402
 }
+
 ```
 
 ## Implementation
@@ -197,11 +156,13 @@ Please note that some json values have been truncated in the previous example.
 ### CURL
 
 ```
+
 curl --location --request POST 'https://app.marksign.local/en/mobile/status/381ed84f-0851-ce1e-a048-fa1e13a53bba.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
 }'
+
 ```
 
 ### Using php-client
@@ -209,7 +170,9 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/status/381e
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidIdentificationStatusRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidIdentificationStatusRequestBuilder.html) as request builder.
 
 ```
- * The token was found from the response of 'initialize authentication via mobile id' request.
+
+/**
+ * The token can be found from the response of 'initialize authentication via mobile id' request.
  * The following is a dummy to use as example.
  */
 $token = '40a77456-8b15-4818-2df2-034376f6c6f5';
