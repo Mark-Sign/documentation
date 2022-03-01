@@ -4,7 +4,7 @@ title: Initialize Hash Signing
 parent: Mobile-ID APIs
 grand_parent: API Reference
 has_toc: true
-nav_order: 5
+nav_order: 6
 ---
 
 # Initialize hash signing via mobile id
