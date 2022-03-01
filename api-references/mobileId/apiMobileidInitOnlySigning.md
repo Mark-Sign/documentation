@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Initialize Signing
+title: Initialize Only Signing
 parent: Mobile-ID APIs
 grand_parent: API Reference
 has_toc: true
