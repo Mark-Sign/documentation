@@ -156,7 +156,7 @@ $removeReq = (new DocumentRemoveRequestBuilder)
   ->withDocumentId($documentId)
   ->createRequest();
 $removeRes = $client->postRequest($removeReq);
-$removeResArray = $removeRes->toArray(false);
+$removeResArray = $removeRes->toArray();
 var_dump($removeResArray);
 
 ```

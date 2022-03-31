@@ -240,7 +240,7 @@ $uploadReq = (new DocumentUploadRequestBuilder)
   ])
   ->createRequest();
 $uploadRes = $client->postRequest($uploadReq);
-$uploadResArray = $uploadRes->toArray(false);
+$uploadResArray = $uploadRes->toArray();
 var_dump($uploadResArray);
 
 ```

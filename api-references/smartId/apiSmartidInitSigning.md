@@ -215,7 +215,7 @@ $initSignReq = (new SmartidInitSigningRequestBuilder)
   )
   ->createRequest();
 $initSignRes = $client->postRequest($initSignReq);
-$initSignResArray = $response->toArray(false);
+$initSignResArray = $response->toArray();
 var_dump($initSignResArray);
 
 ```

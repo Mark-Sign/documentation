@@ -216,7 +216,7 @@ $signProcStatReq = (new MobileidSigningProcessStatusRequestBuilder)
   ->withToken($token)
   ->createRequest();
 $signProcStatRes = $client->postRequest($signProcStatReq);
-$signProcStatResArray = $signProcStatRes->toArray(false);
+$signProcStatResArray = $signProcStatRes->toArray();
 var_dump($signProcStatResArray);
 
 ```

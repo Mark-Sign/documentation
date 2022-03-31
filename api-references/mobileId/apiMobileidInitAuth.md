@@ -195,7 +195,7 @@ $initAuthReq = (new MobileidInitAuthRequestBuilder)
   ->withsanctions(true)
   ->createRequest();
 $initAuthRes = $client->postRequest($initAuthReq);
-$initAuthResArray = $initAuthRes->toArray(false);
+$initAuthResArray = $initAuthRes->toArray();
 var_dump($initAuthResArray);
 
 ```

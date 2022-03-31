@@ -165,7 +165,7 @@ $hashSignInitReq = (new SmartidInitHashSigningRequestBuilder)
   ->withMessage('any message')
   ->createRequest();
 $hashSignInitRes = $client->postRequest($hashSignInitReq);
-$hashSignInitResArray = $hashSignInitRes->toArray(false);
+$hashSignInitResArray = $hashSignInitRes->toArray();
 var_dump($hashSignInitResArray);
 
 ```

@@ -146,7 +146,7 @@ $indentRemReq = (new SmartidIdentificationRemoveRequestBuilder)
   ->withSessionId($sessionId)
   ->createRequest();
 $indentRemRes = $client->postRequest($indentRemReq);
-$indentRemResArray = $indentRemRes->toArray(false);
+$indentRemResArray = $indentRemRes->toArray();
 var_dump($indentRemResArray);
 
 ```

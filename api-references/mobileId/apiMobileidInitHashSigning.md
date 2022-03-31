@@ -167,7 +167,7 @@ $hashSignInitReq = (new MobileidInitHashSigningRequestBuilder)
   ->withMessage('Dummy')
   ->createRequest();
 $hashSignInitRes = $client->postRequest($hashSignInitReq);
-$hashSignInitResArray = $hashSignInitRes->toArray(false);
+$hashSignInitResArray = $hashSignInitRes->toArray();
 var_dump($hashSignInitResArray);
 
 ```

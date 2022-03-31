@@ -178,7 +178,7 @@ $validationReq = (new DocumentValidationRequestBuilder)
   ->withDocumentId($documentId)
   ->createRequest();
 $validationRes = $client->postRequest($validationReq);
-$validationResArray = $validationRes->toArray(false);
+$validationResArray = $validationRes->toArray();
 var_dump($validationResArray);
 
 ```

@@ -147,7 +147,7 @@ $hashSignStatReq = (new MobileidHashSigningProcessStatusRequestBuilder)
   ->withToken($hashSignToken)
   ->createRequest();
 $hashSignStatReq = $client->postRequest($hashSignStatReq);
-$hashSignStatReqArray = $hashSignStatReq->toArray(false);
+$hashSignStatReqArray = $hashSignStatReq->toArray();
 var_dump($hashSignStatReqArray);
 
 ```

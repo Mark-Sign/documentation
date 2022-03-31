@@ -182,7 +182,7 @@ $identStatusReq = (new SmartidIdentificationStatusRequestBuilder)
   ->withToken($token)
   ->createRequest();
 $identStatusRes = $client->postRequest($identStatusReq);
-$identStatusResArray = $identStatusRes->toArray(false);
+$identStatusResArray = $identStatusRes->toArray();
 var_dump($identStatusResArray);
 
 ```

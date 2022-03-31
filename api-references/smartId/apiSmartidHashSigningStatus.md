@@ -143,7 +143,7 @@ $hashSignStatReq = (new SmartidHashSigningProcessStatusRequestBuilder)
   ->withToken($hashSignToken)
   ->createRequest();
 $hashSignStatRes = $client->postRequest($hashSignStatReq);
-$hashSignStatResArray = $hashSignStatRes->toArray(false);
+$hashSignStatResArray = $hashSignStatRes->toArray();
 var_dump($hashSignStatResArray);
 
 ```

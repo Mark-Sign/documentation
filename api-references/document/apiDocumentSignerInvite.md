@@ -190,7 +190,7 @@ $signerInviteReq = (new DocumentSignerInviteRequestBuilder)
   )
   ->createRequest();
 $signerInviteRes = $client->postRequest($signerInviteReq);
-$signerInviteResArray = $signerInviteRes->toArray(false);
+$signerInviteResArray = $signerInviteRes->toArray();
 var_dump($signerInviteResArray);
 
 ```

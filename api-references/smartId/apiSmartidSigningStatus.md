@@ -217,7 +217,7 @@ $signProcStatReq = (new SmartidSigningProcessStatusRequestBuilder)
   ->withToken($token)
   ->createRequest();
 $signProcStatRes = $client->postRequest($signProcStatReq);
-$signProcStatResArray = $signProcStatRes->toArray(false);
+$signProcStatResArray = $signProcStatRes->toArray();
 var_dump($signProcStatResArray);
 
 ```

@@ -181,7 +181,7 @@ $identStatusReq = (new MobileidIdentificationStatusRequestBuilder)
   ->withToken($token)
   ->createRequest();
 $identStatusRes = $client->postRequest($identStatusReq);
-$identStatusResArray = $identStatusRes->toArray(false);
+$identStatusResArray = $identStatusRes->toArray();
 var_dump($identStatusResArray);
 
 ```
