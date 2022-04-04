@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\DocumentFileValidationRequestBuilder
+title: DocumentFileValidationRequestBuilder
 parent: Class References
 has_toc: true
 nav_order: 1

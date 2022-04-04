@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\Model\Request
+title: Request
 parent: Class References
 has_toc: true
 nav_order: 1

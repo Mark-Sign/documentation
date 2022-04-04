@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters
+title: TraitBuildParameters
 parent: Class References
 has_toc: true
 nav_order: 1

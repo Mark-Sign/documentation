@@ -4,21 +4,22 @@ title: Home
 nav_order: 1
 ---
 
-#Mark Sign Gateway PHP Client
+# Mark Sign Gateway PHP Client
 
 Mark Sign Gateway PHP Client is given as open source PHP Client, allowing you to tweak its functionality to fit your specific needs. 
 This library simplifies the integration in PHP applications by encapsulating all Gateway API calls and responses in PHP objects. 
 This guide describes how to use our solution to upload, sign , validate and download documents. In only just few steps, you'll be able to use our Signature solution. 
 
-##Execution Flow
+## Execution Flow
 We have two types of system, one is Mobile ID & Another one is Smart ID.
 We can use any of them for doing all of our tasks.
 For each type of works, we use RequestBuilder Class for preparing our request
 & then post that request using Client Class for collecting result. For simplicity, we will use Smart ID in all of our examples.
 But you can use same type of examples for Mobile ID too.
 
-##Getting started
-###Installation
+## Getting started
+
+### Installation
 You can install it in your project using different ways.
 1. From your php command line console run 
 ```
@@ -30,7 +31,7 @@ from this link https://github.com/Mark-Sign/gateway-sdk-php and run
 composer install
 ```
 
-###Initialize Library
+### Initialize Library
 To begin using this package, initialize the Client class with an access token( provided by mark sign which is used for authorization ) 
 and a logger interface for logging detail about different server requests. The monolog logger is used in the following example.
 
@@ -45,7 +46,7 @@ $logger = new Logger('dev', [new StreamHandler('log_file_name')]);
 $client = new Client($accessToken, $logger);
 ```
 
-###Initialize Authentication
+### Initialize Authentication
 For doing any further operations, we need unique token from server which will be used as unique identifier for us.
 We can collect this token by initializing authentication process. 
 For initiating authentication process, we will instantiate a `SmartidInitAuthRequestBuilder` object, will set all the necessary body parameters access_token, code, country & will call `createRequest` method.
@@ -73,7 +74,7 @@ $token = $responseArray['token'];
 
 [More detail about this end point](https://mark-sign.github.io/documentation/api-references/smartId/apiSmartidInitAuth.html)
 
-###Upload Document
+### Upload Document
 After that, we need to initiate a request builder using DocumentUploadRequestBuilder class, 
 we should pass required body parameters with it & then we will create a request for uploading document.
 
@@ -106,7 +107,7 @@ $response = $client->postRequest($requestBuilder);
 ```
 [More Detail about this endpoint](https://mark-sign.github.io/documentation/api-references/document/apiDocumentUpload.html)
 
-###Sign Document
+### Sign Document
 Next we can try to sign our document quite easily. Here we have defined another RequestBuilder 
 for initialize signing a document named SmartidInitSigningRequestBuilder. 
 We will use this class for starting signing process. We will create a request & post it using Client like all other endpoint.
@@ -140,7 +141,7 @@ Using our system, you can sign different types of document (pdf, asice, adoc etc
 
 [More Detail about this endpoint](https://mark-sign.github.io/documentation/api-references/smartId/apiSmartidInitSigning.html)
 
-###Validate Document
+### Validate Document
 After signing a document, you may want to validate it. Using this endpoint, you can do it in no time. We have kept all the process same for each endpoint. 
 So you need to create a RequestBuilder using DocumentValidationRequestBuilder, then will create a request using it & will post request using client.
 
@@ -157,7 +158,7 @@ You will get the unique document id when you will upload document & this is the 
 
 [More Detail about this endpoint](https://mark-sign.github.io/documentation/api-references/document/apiDocumentValidation.html)
 
-###Download Document
+### Download Document
 After completing all of these processes, you can download your document for preserving it locally & this endpoint will help you for doing it.
 Again you need to initiate a RequestBuilder named DocumentDownloadRequestBuilder, then create a request using it 
 & at last, post that request using Client object. 
@@ -171,7 +172,7 @@ $downloadReq = (new DocumentDownloadRequestBuilder)
 $downloadRes = $client->postRequest($downloadReq);
 ```
 
-##Want to know more
+## Want to know more
 We have shown the common flow of execution from our endpoint list. There are many more options which can be useful for you. Please check below list too.
 1. You can also remove document, invite signer, can check status. 
 Please [check here](https://mark-sign.github.io/documentation/api-references/document/) for more details about all of these endpoints.

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitSigningRequestBuilder
+title: SmartidInitSigningRequestBuilder
 parent: Class References
 has_toc: true
 nav_order: 1

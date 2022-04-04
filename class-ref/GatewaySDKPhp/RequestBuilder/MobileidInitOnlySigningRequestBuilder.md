@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitOnlySigningRequestBuilder
+title: MobileidInitOnlySigningRequestBuilder
 parent: Class References
 has_toc: true
 nav_order: 1

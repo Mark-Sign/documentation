@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\DocumentStatusCheckRequestBuilder
+title: DocumentStatusCheckRequestBuilder
 parent: Class References
 has_toc: true
 nav_order: 1
