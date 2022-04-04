@@ -6,7 +6,7 @@ has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder
+# AbstractRequestBuilder
 {: .no_toc }
 
 Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`

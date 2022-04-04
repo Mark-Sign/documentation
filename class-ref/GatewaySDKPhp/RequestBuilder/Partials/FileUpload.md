@@ -6,7 +6,7 @@ has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload
+# FileUpload
 {: .no_toc }
 
 

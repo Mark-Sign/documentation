@@ -21,7 +21,7 @@ The [PHP client](https://github.com/Mark-Sign/gateway-sdk-php/) helps to lighten
 
 ## Installation
 
-Installation is pretty much stright forward with composer. To install, just run the following command:
+Installation is pretty much straight forward with composer. To install, just run the following command:
 
 ```
 composer require mark-sign/gateway-sdk-php
@@ -104,5 +104,5 @@ $requestBuilder = (new DocumentUploadRequestBuilder)
     ->createRequest();
 
 $response = $client->postRequest($requestBuilder);
-$responseArray = $response->toArray(false);
+$responseArray = $response->toArray();
 ```

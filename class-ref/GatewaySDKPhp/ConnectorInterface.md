@@ -6,7 +6,7 @@ has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\ConnectorInterface
+# ConnectorInterface
 {: .no_toc }
 
 

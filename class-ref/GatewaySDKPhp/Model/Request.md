@@ -6,7 +6,7 @@ has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\Model\Request
+# Request
 {: .no_toc }
 
 Implements `AppBundle\GatewaySDKPhp\Model\RequestInterface`
