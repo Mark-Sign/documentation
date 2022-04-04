@@ -7,6 +7,8 @@ nav_order: 1
 ---
 
 # Files
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/Partials/Files.php)
+
 {: .no_toc }
 
 

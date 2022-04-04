@@ -7,6 +7,8 @@ nav_order: 1
 ---
 
 # Connector
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/Connector.php)
+
 {: .no_toc }
 
 Implements `AppBundle\GatewaySDKPhp\ConnectorInterface`

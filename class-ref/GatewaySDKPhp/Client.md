@@ -7,6 +7,8 @@ nav_order: 1
 ---
 
 # Client
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/Client.php)
+
 {: .no_toc }
 
 

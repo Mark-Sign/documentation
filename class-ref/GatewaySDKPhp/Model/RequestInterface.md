@@ -7,6 +7,8 @@ nav_order: 1
 ---
 
 # RequestInterface
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/Model/RequestInterface.php)
+
 {: .no_toc }
 
 

@@ -7,6 +7,8 @@ nav_order: 1
 ---
 
 # TraitBuildParameters
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/Traits/TraitBuildParameters.php)
+
 {: .no_toc }
 
 

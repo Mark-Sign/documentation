@@ -7,6 +7,8 @@ nav_order: 1
 ---
 
 # RequestBuilderInterface
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/RequestBuilderInterface.php)
+
 {: .no_toc }
 
 
