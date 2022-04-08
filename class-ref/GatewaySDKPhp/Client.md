@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\Client
+title: Client
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\Client
+# Client
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/Client.php)
+
 {: .no_toc }
 
 

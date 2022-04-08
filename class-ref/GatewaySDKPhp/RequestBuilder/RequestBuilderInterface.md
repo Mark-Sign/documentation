@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
+title: RequestBuilderInterface
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface
+# RequestBuilderInterface
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/RequestBuilderInterface.php)
+
 {: .no_toc }
 
 

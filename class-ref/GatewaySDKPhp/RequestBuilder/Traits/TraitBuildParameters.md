@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters
+title: TraitBuildParameters
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters
+# TraitBuildParameters
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/Traits/TraitBuildParameters.php)
+
 {: .no_toc }
 
 

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload
+title: FileUpload
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload
+# FileUpload
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/Partials/FileUpload.php)
+
 {: .no_toc }
 
 

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\Model\RequestInterface
+title: RequestInterface
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\Model\RequestInterface
+# RequestInterface
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/Model/RequestInterface.php)
+
 {: .no_toc }
 
 

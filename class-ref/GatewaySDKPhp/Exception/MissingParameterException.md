@@ -1,22 +1,16 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\Exception\MissingParameterException
+title: MissingParameterException
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\Exception\MissingParameterException
+# MissingParameterException
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/Exception/MissingParameterException.php)
+
 {: .no_toc }
 
 Extends `LogicException` <br> Implements `Throwable`
 {: .fw-300 .fs-6 }
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\MobileidHashSigningProcessStatusRequestBuilder
+title: MobileidHashSigningProcessStatusRequestBuilder
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\MobileidHashSigningProcessStatusRequestBuilder
+# MobileidHashSigningProcessStatusRequestBuilder
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/MobileidHashSigningProcessStatusRequestBuilder.php)
+
 {: .no_toc }
 
 Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\Model\Request
+title: Request
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\Model\Request
+# Request
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/Model/Request.php)
+
 {: .no_toc }
 
 Implements `AppBundle\GatewaySDKPhp\Model\RequestInterface`

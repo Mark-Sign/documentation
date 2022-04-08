@@ -1,12 +1,13 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitOnlySigningRequestBuilder
+title: MobileidInitOnlySigningRequestBuilder
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitOnlySigningRequestBuilder
+# MobileidInitOnlySigningRequestBuilder
+
 {: .no_toc }
 
 Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br> Trait `AppBundle\GatewaySDKPhp\RequestBuilder\Traits\TraitBuildParameters`

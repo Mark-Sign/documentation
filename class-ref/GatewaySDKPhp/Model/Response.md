@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\Model\Response
+title: Response
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\Model\Response
+# Response
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/Model/Response.php)
+
 {: .no_toc }
 
 Implements `AppBundle\GatewaySDKPhp\Model\ResponseInterface`

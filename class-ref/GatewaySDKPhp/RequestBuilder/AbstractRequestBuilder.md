@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder
+title: AbstractRequestBuilder
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder
+# AbstractRequestBuilder 
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/AbstractRequestBuilder.php)
+
 {: .no_toc }
 
 Implements `AppBundle\GatewaySDKPhp\RequestBuilder\RequestBuilderInterface`

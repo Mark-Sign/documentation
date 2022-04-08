@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\ConnectorInterface
+title: ConnectorInterface
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\ConnectorInterface
+# ConnectorInterface
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/ConnectorInterface.php)
+
 {: .no_toc }
 
 

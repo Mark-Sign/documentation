@@ -1,12 +1,14 @@
 ---
 layout: default
-title: AppBundle\GatewaySDKPhp\RequestBuilder\Annotations\RequestParameter
+title: RequestParameter
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# AppBundle\GatewaySDKPhp\RequestBuilder\Annotations\RequestParameter
+# RequestParameter
+[view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/Annotations/RequestParameter.php)
+
 {: .no_toc }
 
 
