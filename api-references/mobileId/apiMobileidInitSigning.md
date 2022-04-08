@@ -219,7 +219,7 @@ $initSignReq = (new MobileidInitSigningRequestBuilder)
   )
   ->createRequest();
 $initSignRes = $client->postRequest($initSignReq);
-$initSignResArray = $response->toArray();
+$initSignResArray = $initSignRes->toArray();
 var_dump($initSignResArray);
 
 ```
