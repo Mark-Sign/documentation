@@ -108,7 +108,7 @@ Content-Type: application/json
   "type": "pdf",
   "country": "LT",
   "message": "any message",
-  "code": "50001018865",
+  "code": "30303039914",
   "signature_position": "auto",
   "signature_page": "last_page",
   "certificate_level": "QUALIFIED",
@@ -167,7 +167,7 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/only-sign.
   "type": "pdf",
   "country": "LT",
   "message": "any message",
-  "code": "50001018865",
+  "code": "30303039914",
   "signature_position": "auto",
   "signature_page": "last_page",
   "certificate_level": "QUALIFIED",
@@ -199,7 +199,7 @@ $initSignReq = (new SmartidInitOnlySigningRequestBuilder)
   ->withType('pdf')
   ->withCountry('LT')
   ->withMessage('any message')
-  ->withCode('50001018865')
+  ->withCode('30303039914')
   ->withSignaturePosition('auto')
   ->withSignaturePage('last_page')
   ->withCertificateLevel('QUALIFIED')

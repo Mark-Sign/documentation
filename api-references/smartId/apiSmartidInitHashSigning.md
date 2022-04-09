@@ -91,7 +91,7 @@ Content-Type: application/json
   "hash_algorithm": "SHA256",
   "country": "LT",
   "message": "any message",
-  "code": "50001018865"
+  "code": "30303039914"
 }
 
 ```
@@ -138,7 +138,7 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/sign/hash.
   "hash_algorithm": "SHA256",
   "country": "LT",
   "message": "any message",
-  "code": "50001018865"
+  "code": "30303039914"
 }'
 
 ```
@@ -161,7 +161,7 @@ $hashSignInitReq = (new SmartidInitHashSigningRequestBuilder)
   ->withHash(hash('sha256', file_get_contents($filePath)))
   ->withHashAlgorithm('SHA256')
   ->withCountry('LT')
-  ->withCode('50001018865')
+  ->withCode('30303039914')
   ->withMessage('any message')
   ->createRequest();
 $hashSignInitRes = $client->postRequest($hashSignInitReq);

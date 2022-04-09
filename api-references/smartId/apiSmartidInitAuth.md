@@ -89,7 +89,7 @@ Content-Type: application/json
 
 {
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6",
-  "code": "50001018865",
+  "code": "30303039914",
   "country": "LT",
   "message": "any message",
   "peps": true,
@@ -134,7 +134,7 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/login.json
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6",
-  "code": "50001018865",
+  "code": "30303039914",
   "country": "LT",
   "message": "any message",
   "peps": true,
@@ -154,7 +154,7 @@ To use the php-client, please follow the installation and basic usage [here](/do
  * might need to be saved for future purposes.
  */
 $initAuthReq = (new SmartidInitAuthRequestBuilder)
-  ->withCode('50001018865')
+  ->withCode('30303039914')
   ->withCountry('LT')
   ->withMessage('any message')
   ->withPeps(true)
