@@ -106,7 +106,7 @@ Content-Type: application/json
 
 {
   "status": "ok",
-  "token": "19f1c829-63f2-eb7f-b473-8bb481298dc2",
+  "token": "1c5cd62c-bbf7-779e-3fb4-bad3433ad83f",
   "control_code": "5210"
 }
 
