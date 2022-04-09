@@ -208,7 +208,7 @@ To use the php-client, please follow the installation and basic usage [here](/do
 ```
 
 /**
- * The token can be found from the response of 'initialize authentication via smart id' request.
+ * The token can be found from the response of 'Initialize signing via smart id' request.
  * The following is a dummy to use as example.
  */
 $token = '40a77456-8b15-4818-2df2-034376f6c6f5';
