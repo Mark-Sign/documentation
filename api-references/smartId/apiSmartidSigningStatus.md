@@ -99,7 +99,7 @@ This API checks the status of the signing process initialized by [Initialize sig
 
 ```
 
-POST /en/smartid/sign/status/19f1c829-63f2-eb7f-b473-8bb481298dc2.json HTTP/1.1
+POST /en/smartid/sign/status/aec29dc7-bde3-8299-6dc6-00686318e538.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -117,11 +117,11 @@ Content-Type: application/json
 
 {
   "status": "ok",
-  "signature_id": "Signature1",
+  "signature_id": "IEBCLXycNwpDQ\/Orcts..........PN+FTv\/nhGn6u+E9z2KB+W4Aw",
   "file": {
-    "name": "d251f53441f61822a7884454e89d0c5baf246ab2_signed.pdf",
-    "content": "JVBERi0xLjUKJbXtrvsKNzYgMCBvYmoKPDwgL0xlbmd0aCA3Ny..........RzdHJlYW0KZW5kb2JqCnN0YXJ0eHJlZgo1MDg5MwolJUVPRgo=",
-    "digest": "cf4e55c5111e4fd9bd32b5d3ac34fd4eb00d938d"
+    "name": "aec29dc7-bde3-8299-6dc6-00686318e538_signed.pdf",
+    "content": "JVBERi0xLjUKJbXtrvsKNzYgMCBvYmoKPDwgL..........RhcnR4cmVmCjEzOTg1MwolJUVPRgo=",
+    "digest": "a09f67cf3253cca105..........03e1e3fb3ee5db98c2f9"
   },
   "person": {
     "name": "NAME",
@@ -193,7 +193,7 @@ Please note that some json values have been truncated in the previous example.
 
 ```
 
-curl --location --request POST 'https://app.marksign.local/en/smartid/sign/status/19f1c829-63f2-eb7f-b473-8bb481298dc2.json' \
+curl --location --request POST 'https://app.marksign.local/en/smartid/sign/status/aec29dc7-bde3-8299-6dc6-00686318e538.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
@@ -211,7 +211,7 @@ To use the php-client, please follow the installation and basic usage [here](/do
  * The token can be found from the response of 'Initialize signing via smart id' request.
  * The following is a dummy to use as example.
  */
-$token = '40a77456-8b15-4818-2df2-034376f6c6f5';
+$token = 'aec29dc7-bde3-8299-6dc6-00686318e538';
 
 $signProcStatReq = (new SmartidSigningProcessStatusRequestBuilder)
   ->withToken($token)

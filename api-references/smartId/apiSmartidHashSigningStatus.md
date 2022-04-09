@@ -79,7 +79,7 @@ This API checks the status of the hash signing process initialized by [Initializ
 
 ```
 
-POST /en/smartid/sign/hash/status/c2d86cd3-ee0e-d5d2-2307-91ec420a06d0.json HTTP/1.1
+POST /en/smartid/sign/hash/status/ea89b835-c585-3c3c-9ea8-0f1b6ed3e13d.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -96,7 +96,8 @@ Content-Type: application/json
 ```
 
 {
-  "status": "waiting"
+  "status": "ok",
+  "signature_value": "T2RKYUlGL1dxUUJjc3ZI..........TmFkQzY4OTU3dnNuYw=="
 }
 
 ```
@@ -119,7 +120,7 @@ Content-Type: application/json
 
 ```
 
-curl --location --request POST 'https://app.marksign.local/en/smartid/sign/hash/status/c2d86cd3-ee0e-d5d2-2307-91ec420a06d0.json' \
+curl --location --request POST 'https://app.marksign.local/en/smartid/sign/hash/status/ea89b835-c585-3c3c-9ea8-0f1b6ed3e13d.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
@@ -137,7 +138,7 @@ To use the php-client, please follow the installation and basic usage [here](/do
  * The hashSignToken was found from the response of 'Initialize hash signing via smart id' request.
  * The following is a dummy to use as example.
  */
-$hashSignToken = 'e654322d-9c20-4630-bc26-16e11d8243ff';
+$hashSignToken = 'ea89b835-c585-3c3c-9ea8-0f1b6ed3e13d';
 
 $hashSignStatReq = (new SmartidHashSigningProcessStatusRequestBuilder)
   ->withToken($hashSignToken)

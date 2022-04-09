@@ -139,7 +139,7 @@ Please note that some json values have been truncated in the previous example.
 
 {
   "status": "ok",
-  "token": "dcfda816-f9ce-d69f-94eb-a5ed87d50606",
+  "token": "aec29dc7-bde3-8299-6dc6-00686318e538",
   "control_code": "9269"
 }
 

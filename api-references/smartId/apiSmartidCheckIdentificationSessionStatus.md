@@ -88,7 +88,7 @@ This API chceks status of smart id identification session using token.
 
 ```
 
-POST /en/smartid/status/19f1c829-63f2-eb7f-b473-8bb481298dc2.json HTTP/1.1
+POST /en/smartid/status/1c5cd62c-bbf7-779e-3fb4-bad3433ad83f.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -106,32 +106,31 @@ Content-Type: application/json
 
 {
   "status": "ok",
-  "country": "EE",
   "certificate": {
-    "name": "/C=EE/CN=TESTNUMBER,TEN,60001017705/SN=TESTNUMBER/GN=TEN/serialNumber=PNOEE-60001017705",
+    "name": "\/C=LT\/CN=SURNAME,NAME\/SN=SURNAME\/GN=NAME\/serialNumber=PNOLT-30303039914",
     "subject": {
-      "country": "EE",
+      "country": "LT",
       "organisation": null,
       "organisation_unit": null,
-      "common_name": "TESTNUMBER,TEN,60001017705",
-      "surname": "TESTNUMBER",
+      "common_name": "SURNAME,NAME",
+      "surname": "SURNAME",
       "name": "TEN",
-      "serial_number": "PNOEE-60001017705"
+      "serial_number": "PNOLT-30303039914"
     },
     "issuer": {
       "country": "EE",
       "organisation": "AS Sertifitseerimiskeskus",
-      "common_name": "TEST of ESTEID-SK 2015"
+      "common_name": "TEST of EID-SK 2016"
     },
-    "valid_from": "2020-11-13",
-    "valid_to": "2025-11-12",
-    "value": "TUlJRnRUQ0NBNTJnQXdJQkFnSVFYb1VTQmJPQmJJZGZybytZNF..........FSNXFaRFc0aStyM2FkOG1hb1RoSDRIWjFrb2w2TmVVWEErQT09"
+    "valid_from": "2021-09-17",
+    "valid_to": "2024-09-17",
+    "value": "TUlJSUZqQ0NCZjZnQXd..........xPak02Mk5rLzlRPT0="
   },
-  "code": "60001017705",
-  "name": "TEN",
-  "token": "381ed84f-0851-ce1e-a048-fa1e13a53bba",
-  "control_code": "6223",
-  "surname": "TESTNUMBER",
+  "code": "30303039914",
+  "country": "LT",
+  "name": "NAME",
+  "surname": "SURNAME",
+  "token": "1c5cd62c-bbf7-779e-3fb4-bad3433ad83f",
   "sanctions_data": [],
   "peps_data": []
 }
@@ -158,7 +157,7 @@ Please note that some json values have been truncated in the previous example.
 
 ```
 
-curl --location --request POST 'https://app.marksign.local/en/smartid/status/19f1c829-63f2-eb7f-b473-8bb481298dc2.json' \
+curl --location --request POST 'https://app.marksign.local/en/smartid/status/1c5cd62c-bbf7-779e-3fb4-bad3433ad83f.json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
@@ -176,7 +175,7 @@ To use the php-client, please follow the installation and basic usage [here](/do
  * The token can be found from the response of 'Initialize authentication via smart id' request.
  * The following is a dummy to use as example.
  */
-$token = '40a77456-8b15-4818-2df2-034376f6c6f5';
+$token = '1c5cd62c-bbf7-779e-3fb4-bad3433ad83f';
 
 $identStatusReq = (new SmartidIdentificationStatusRequestBuilder)
   ->withToken($token)

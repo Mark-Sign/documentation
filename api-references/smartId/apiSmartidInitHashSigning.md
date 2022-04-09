@@ -87,7 +87,7 @@ Content-Type: application/json
 
 {
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6",
-  "hash": "JVBERi0xLjUKJbXtrvsKNzYgMCBvYmoKPDwgL0xlbmd0aCA3Ny..........RzdHJlYW0KZW5kb2JqCnN0YXJ0eHJlZgo1MDg5MwolJUVPRgo=",
+  "hash": "b74970de7f4d8c26753a..........d17130930aa0dbb5f724c",
   "hash_algorithm": "SHA256",
   "country": "LT",
   "message": "any message",
@@ -106,7 +106,7 @@ Please note that some json values have been truncated in the previous example.
 
 {
   "status": "ok",
-  "token": "c2d86cd3-ee0e-d5d2-2307-91ec420a06d0",
+  "token": "ea89b835-c585-3c3c-9ea8-0f1b6ed3e13d",
   "control_code": "9403"
 }
 
@@ -134,7 +134,7 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/sign/hash.
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6",
-  "hash": "JVBERi0xLjUKJbXtrvsKNzYgMCBvYmoKPDwgL0xlbmd0aCA3Ny..........RzdHJlYW0KZW5kb2JqCnN0YXJ0eHJlZgo1MDg5MwolJUVPRgo=",
+  "hash": "b74970de7f4d8c26753a..........d17130930aa0dbb5f724c",
   "hash_algorithm": "SHA256",
   "country": "LT",
   "message": "any message",

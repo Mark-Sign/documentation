@@ -81,7 +81,7 @@ This API destroys the session initialed by authentication or signing processes v
 
 ```
 
-DELETE /en/api/smartid/session/c2d86cd3-ee0e-d5d2-2307-91ec420a06d0 HTTP/1.1
+DELETE /en/api/smartid/session/1c5cd62c-bbf7-779e-3fb4-bad3433ad83f HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
 
@@ -120,7 +120,7 @@ Content-Type: application/json
 
 ```
 
-curl --location --request DELETE 'https://app.marksign.local/en/api/smartid/session/c2d86cd3-ee0e-d5d2-2307-91ec420a06d0' \
+curl --location --request DELETE 'https://app.marksign.local/en/api/smartid/session/1c5cd62c-bbf7-779e-3fb4-bad3433ad83f' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6"
@@ -140,7 +140,7 @@ To use the php-client, please follow the installation and basic usage [here](/do
  * or from the response of 'initialize hash signing authentication via smart id' request
  * The following is a dummy to use as example.
  */
-$sessionId = '98ead4e1-015b-4968-bdcd-03797d1a4bea';
+$sessionId = '1c5cd62c-bbf7-779e-3fb4-bad3433ad83f';
 
 $indentRemReq = (new SmartidIdentificationRemoveRequestBuilder)
   ->withSessionId($sessionId)
