@@ -177,7 +177,7 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/login.json'
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitAuthRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitAuthRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitAuthRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitAuthRequestBuilder.html) as request builder.
 
 ```
 

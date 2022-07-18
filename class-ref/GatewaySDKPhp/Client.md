@@ -27,7 +27,7 @@ nav_order: 1
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
 | private | String | accessToken | API access token |
-| private | [`AppBundle\GatewaySDKPhp\ConnectorInterface`](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html) | connector | Connector that will be used to request API |
+| private | [`AppBundle\GatewaySDKPhp\ConnectorInterface`](/class-ref/GatewaySDKPhp/ConnectorInterface.html) | connector | Connector that will be used to request API |
 | private | `Psr\Log\LoggerInterface` | logger | PSR compatible logger |
 
 

@@ -193,7 +193,7 @@ Please note that some json values have been truncated in the previous example.
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitSigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitSigningRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitSigningRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitSigningRequestBuilder.html) as request builder.
 
 ```
 /**

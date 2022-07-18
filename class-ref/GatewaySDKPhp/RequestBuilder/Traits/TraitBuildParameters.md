@@ -29,4 +29,4 @@ nav_order: 1
 
 *returns* array
 
-Builds and returns body parameters recursively by reading [`AppBundle\GatewaySDKPhp\RequestBuilder\Annotations\RequestParameter`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Annotations/RequestParameter.html) of the using class
+Builds and returns body parameters recursively by reading [`AppBundle\GatewaySDKPhp\RequestBuilder\Annotations\RequestParameter`](/class-ref/GatewaySDKPhp/RequestBuilder/Annotations/RequestParameter.html) of the using class

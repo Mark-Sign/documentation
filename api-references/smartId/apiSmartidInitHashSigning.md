@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Initialize Hash Signing 
+title: Initialize Hash Signing
 parent: Smart-ID APIs
 grand_parent: API Reference
 has_toc: true
@@ -147,7 +147,7 @@ Please note that some json values have been truncated in the previous example.
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitHashSigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidInitHashSigningRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitHashSigningRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/SmartidInitHashSigningRequestBuilder.html) as request builder.
 
 ```
 

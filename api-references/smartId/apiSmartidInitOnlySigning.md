@@ -161,7 +161,7 @@ Please note that some json values have been truncated in the previous example.
 ```
 
 curl --location --request POST 'https://app.marksign.local/en/smartid/only-sign.json' \
---header 'Content-Type: application/json' 
+--header 'Content-Type: application/json'
 --data-raw '{
   "access_token": "52900c96-3f60-5307-3719-5948f0191da6",
   "type": "pdf",
@@ -189,7 +189,7 @@ Please note that some json values have been truncated in the previous example.
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitOnlySigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidInitSigningRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitOnlySigningRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/SmartidInitSigningRequestBuilder.html) as request builder.
 
 ```
 

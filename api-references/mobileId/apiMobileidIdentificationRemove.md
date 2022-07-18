@@ -48,7 +48,7 @@ This API destroys the session initialed by authentication or signing processes v
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| sessionId | Mandatory | String | Token that is being sent as a response of from the response of [Initialize authentication via mobile id](/documentation/api-references/mobileId/apiMobileidInitAuth.html#successful-response) request or [Initialize signing via mobile id](/documentation/api-references/mobileId/apiMobileidInitSigning.html#successful-response) request or [Initialize hash signing via mobile id](/documentation/api-references/mobileId/apiMobileidInitHashSigning.html#successful-response) request |
+| sessionId | Mandatory | String | Token that is being sent as a response of from the response of [Initialize authentication via mobile id](/api-references/mobileId/apiMobileidInitAuth.html#successful-response) request or [Initialize signing via mobile id](/api-references/mobileId/apiMobileidInitSigning.html#successful-response) request or [Initialize hash signing via mobile id](/api-references/mobileId/apiMobileidInitHashSigning.html#successful-response) request |
 
 ## Request body parameter description
 
@@ -130,7 +130,7 @@ curl --location --request DELETE 'https://app.marksign.local/en/api/mobile/sessi
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidIdentificationRemoveRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidIdentificationRemoveRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidIdentificationRemoveRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/MobileidIdentificationRemoveRequestBuilder.html) as request builder.
 
 ```
 

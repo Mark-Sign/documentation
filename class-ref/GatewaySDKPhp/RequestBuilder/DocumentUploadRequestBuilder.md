@@ -28,8 +28,8 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br>
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
 | protected | String | access | Document access. Possible values: public, private |
-| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/FileUpload.html) | file | File for request |
-| protected | Array of [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Signer`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Signer.html) | signers | Signer's who will be invited to perform operations on the document |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload`](/class-ref/GatewaySDKPhp/RequestBuilder/Partials/FileUpload.html) | file | File for request |
+| protected | Array of [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Signer`](/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Signer.html) | signers | Signer's who will be invited to perform operations on the document |
 
 
 ## Methods
@@ -38,7 +38,7 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br>
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with [`postRequest`](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request) method.
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with [`postRequest`](/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request) method.
 
 ### `public withAccess(string $access)`
 

@@ -36,10 +36,10 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br>
 | protected | String | signaturePage | Page of a visible signature (pdf annotation) in the pdf document. Possible values: first_page, last_page. Default: last_page |
 | protected | Boolean | peps | Whether to check PEPs information |
 | protected | Boolean | sanctions | Whether to check sanctions information |
-| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | pdf | PDF files object |
-| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | asice | ASICE files object |
-| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | adoc | ADOC files object |
-| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | bdoc | BDOC files object |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | pdf | PDF files object |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | asice | ASICE files object |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | adoc | ADOC files object |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | bdoc | BDOC files object |
 
 
 ## Methods
@@ -126,5 +126,5 @@ Sets `bdoc` object
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with [`postRequest`](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request) method.
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with [`postRequest`](/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request) method.
 

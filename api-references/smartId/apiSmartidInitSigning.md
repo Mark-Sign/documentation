@@ -192,7 +192,7 @@ Please note that some json values have been truncated in the previous example.
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitSigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidInitSigningRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidInitSigningRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/SmartidInitSigningRequestBuilder.html) as request builder.
 
 ```
 

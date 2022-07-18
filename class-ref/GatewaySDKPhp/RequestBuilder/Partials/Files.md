@@ -26,7 +26,7 @@ nav_order: 1
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected | Array of [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/FileUpload.html) | files |  |
+| protected | Array of [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload`](/class-ref/GatewaySDKPhp/RequestBuilder/Partials/FileUpload.html) | files |  |
 
 
 ## Methods

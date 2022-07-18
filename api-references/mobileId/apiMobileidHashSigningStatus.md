@@ -19,7 +19,7 @@ nav_order: 7
 {:toc}
 </details>
 
-This API checks the status of the hash signing process initialized by [Initialize hash signing via mobile id](/documentation/api-references/mobileId/apiMobileidInitHashSigning.html#initialize-hash-signing-via-mobile-id) request.
+This API checks the status of the hash signing process initialized by [Initialize hash signing via mobile id](/api-references/mobileId/apiMobileidInitHashSigning.html#initialize-hash-signing-via-mobile-id) request.
 
 ## Endpoint
 
@@ -48,7 +48,7 @@ This API checks the status of the hash signing process initialized by [Initializ
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| token | Mandatory | String | Token that is being sent as a response of [Initialize hash signing via mobile id](/documentation/api-references/mobileId/apiMobileidInitHashSigning.html#successful-response) |
+| token | Mandatory | String | Token that is being sent as a response of [Initialize hash signing via mobile id](/api-references/mobileId/apiMobileidInitHashSigning.html#successful-response) |
 
 ## Request body parameter description
 
@@ -133,7 +133,7 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/sign-hash/s
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidHashSigningProcessStatusRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidHashSigningProcessStatusRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidHashSigningProcessStatusRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/MobileidHashSigningProcessStatusRequestBuilder.html) as request builder.
 
 ```
 

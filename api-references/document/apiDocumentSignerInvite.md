@@ -48,7 +48,7 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| documentId | Mandatory | String | Document UUID from response of ["Document upload"](/documentation/api-references/document/apiDocumentUpload.html#response-document-object-description) |
+| documentId | Mandatory | String | Document UUID from response of ["Document upload"](/api-references/document/apiDocumentUpload.html#response-document-object-description) |
 
 ## Request body parameter description
 
@@ -173,7 +173,7 @@ curl --location --request POST 'https://app.marksign.local/en/api/document/cff82
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentSignerInviteRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/DocumentSignerInviteRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentSignerInviteRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/DocumentSignerInviteRequestBuilder.html) as request builder.
 
 ```
 

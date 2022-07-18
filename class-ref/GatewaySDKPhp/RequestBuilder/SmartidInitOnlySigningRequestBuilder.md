@@ -34,7 +34,7 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br>
 | protected | String | certificateLevel | Requested SK Smart-ID certificate level. Possible values: QSCD, QUALIFIED. Defaults to QSCD |
 | protected | Boolean | peps | Whether to check PEPs information |
 | protected | Boolean | sanctions | Whether to check sanctions information |
-| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | pdf | PDF files object |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\Files`](/class-ref/GatewaySDKPhp/RequestBuilder/Partials/Files.html) | pdf | PDF files object |
 
 ## Methods
 
@@ -102,5 +102,5 @@ Sets `pdf` object
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with [`postRequest`](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request) method.
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with [`postRequest`](/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request) method.
 

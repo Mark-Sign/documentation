@@ -148,7 +148,7 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/sign/hash.j
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitHashSigningRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitHashSigningRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidInitHashSigningRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/MobileidInitHashSigningRequestBuilder.html) as request builder.
 
 ```
 

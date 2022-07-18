@@ -48,7 +48,7 @@ This API chceks status of mobile id identification session using token.
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| token | Mandatory | String | Token that is being sent as a response of [Initialize authentication via mobile id](/documentation/api-references/mobileId/apiMobileidInitAuth.html#successful-response) |
+| token | Mandatory | String | Token that is being sent as a response of [Initialize authentication via mobile id](/api-references/mobileId/apiMobileidInitAuth.html#successful-response) |
 
 ## Request body parameter description
 
@@ -167,7 +167,7 @@ curl --location --request POST 'https://app.marksign.local/en/mobile/status/381e
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidIdentificationStatusRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/MobileidIdentificationStatusRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\MobileidIdentificationStatusRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/MobileidIdentificationStatusRequestBuilder.html) as request builder.
 
 ```
 

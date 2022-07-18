@@ -19,7 +19,7 @@ nav_order: 6
 {:toc}
 </details>
 
-This API checks the status of the hash signing process initialized by [Initialize hash signing via smart id](/documentation/api-references/smartId/apiSmartidInitHashSigning.html#initialize-hash-signing-via-smart-id) request.
+This API checks the status of the hash signing process initialized by [Initialize hash signing via smart id](/api-references/smartId/apiSmartidInitHashSigning.html#initialize-hash-signing-via-smart-id) request.
 
 ## Endpoint
 
@@ -130,7 +130,7 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/sign/hash/
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidHashSigningProcessStatusRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidHashSigningProcessStatusRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidHashSigningProcessStatusRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/SmartidHashSigningProcessStatusRequestBuilder.html) as request builder.
 
 ```
 

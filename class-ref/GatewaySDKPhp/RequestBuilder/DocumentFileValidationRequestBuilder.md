@@ -27,7 +27,7 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br>
 
 | Visibility | Type | Name | Description |
 | :--- | :--- | :--- | :--- |
-| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/Partials/FileUpload.html) | file | File for request |
+| protected | [`AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload`](/class-ref/GatewaySDKPhp/RequestBuilder/Partials/FileUpload.html) | file | File for request |
 
 ## Methods
 
@@ -35,7 +35,7 @@ Extends `AppBundle\GatewaySDKPhp\RequestBuilder\AbstractRequestBuilder` <br><br>
 
 *returns* AppBundle\GatewaySDKPhp\Model\RequestInterface
 
-Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with [`postRequest`](/documentation/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request) method.
+Creates and returns `AppBundle\GatewaySDKPhp\Model\RequestInterface` to be used with [`postRequest`](/class-ref/GatewaySDKPhp/ConnectorInterface.html#public-postrequestappbundlegatewaysdkphpmodelrequestinterface-request) method.
 
 ### `public withFile(AppBundle\GatewaySDKPhp\RequestBuilder\Partials\FileUpload $file)`
 

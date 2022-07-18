@@ -48,7 +48,7 @@ This API chceks status of smart id identification session using token.
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| token | Mandatory | String | Token that is being sent as a response of [Initialize authentication via smart id](/documentation/api-references/smartId/apiSmartidInitAuth.html#successful-response) |
+| token | Mandatory | String | Token that is being sent as a response of [Initialize authentication via smart id](/api-references/smartId/apiSmartidInitAuth.html#successful-response) |
 
 ## Request body parameter description
 
@@ -167,7 +167,7 @@ curl --location --request POST 'https://app.marksign.local/en/smartid/status/1c5
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidIdentificationStatusRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidIdentificationStatusRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidIdentificationStatusRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/SmartidIdentificationStatusRequestBuilder.html) as request builder.
 
 ```
 

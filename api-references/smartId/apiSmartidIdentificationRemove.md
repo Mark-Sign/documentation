@@ -48,7 +48,7 @@ This API destroys the session initialed by authentication or signing processes v
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| sessionId | Mandatory | String | Token that is being sent as a response of from the response of [Initialize authentication via smart id](/documentation/api-references/smartId/apiSmartidInitAuth.html#successful-response) request or [Initialize signing via smart id](/documentation/api-references/smartId/apiSmartidInitSigning.html#successful-response) request or [Initialize hash signing via smart id](/documentation/api-references/smartId/apiSmartidInitHashSigning.html#successful-response) request |
+| sessionId | Mandatory | String | Token that is being sent as a response of from the response of [Initialize authentication via smart id](/api-references/smartId/apiSmartidInitAuth.html#successful-response) request or [Initialize signing via smart id](/api-references/smartId/apiSmartidInitSigning.html#successful-response) request or [Initialize hash signing via smart id](/api-references/smartId/apiSmartidInitHashSigning.html#successful-response) request |
 
 ## Request body parameter description
 
@@ -130,7 +130,7 @@ curl --location --request DELETE 'https://app.marksign.local/en/api/smartid/sess
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidIdentificationRemoveRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/SmartidIdentificationRemoveRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\SmartidIdentificationRemoveRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/SmartidIdentificationRemoveRequestBuilder.html) as request builder.
 
 ```
 

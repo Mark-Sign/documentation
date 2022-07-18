@@ -48,7 +48,7 @@ Short description
 
 | Key | Requirement | Type | Description |
 | :--- | :--- | :--- | :--- |
-| documentId | Mandatory | String | Document UUID from response of ["Document upload"](/documentation/api-references/document/apiDocumentUpload.html#response-document-object-description) |
+| documentId | Mandatory | String | Document UUID from response of ["Document upload"](/api-references/document/apiDocumentUpload.html#response-document-object-description) |
 
 ## Request body parameter description
 
@@ -142,7 +142,7 @@ curl --location --request DELETE 'https://app.marksign.local/en/api/document/cff
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentRemoveRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/DocumentRemoveRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\DocumentRemoveRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/DocumentRemoveRequestBuilder.html) as request builder.
 
 ```
 
