@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Document Validation
-parent: Document APIs
+title: Temporary document signing link generation
+parent: Iframe APIs
 grand_parent: API Reference
 has_toc: true
 nav_order: 1
