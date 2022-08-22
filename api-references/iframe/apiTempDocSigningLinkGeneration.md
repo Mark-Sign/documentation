@@ -7,7 +7,7 @@ has_toc: true
 nav_order: 1
 ---
 
-# Document validation
+# Temporary document signing link generation
 {: .no_toc }
 
 <details open markdown="block">
@@ -72,11 +72,9 @@ Short description
 | message | String | Brief message about what is wrong |
 
 
-
 ## Sample request
 
 ```
-
 POST /api/document/generate-temporary-signing-link.json HTTP/1.1
 Host: app.marksign.local
 Content-Type: application/json
@@ -96,7 +94,6 @@ Content-Type: application/json
     ],
     "language": "string"
 }
-
 ```
 
 ## Sample response
@@ -104,24 +101,20 @@ Content-Type: application/json
 ### Sample success response
 
 ```
-
 {
     "status": "ok",
     "temporary_signing_link": "https://app.marksign.lt/user/document/b3c0ba4c-1b5c-4131-0521-1e5dd0398677/b3c0ba4c-1b5c-4131-0521-1e5dd0398677",
     "valid_until": "1334216865"
 }
-
 ```
 
 ### Sample failed response
 
 ```
-
 {
     "status": "error",
     "message": "message text"
 }
-
 ```
 
 ## Implementation
@@ -129,7 +122,6 @@ Content-Type: application/json
 ### CURL
 
 ```
-
 curl --location --request POST 'https://app.marksign.local/api/document/generate-temporary-signing-link.json 
 --header 'Content-Type: application/json' 
 --data-raw '{
@@ -147,7 +139,6 @@ curl --location --request POST 'https://app.marksign.local/api/document/generate
     ],
     "language": "string"
 }'
-
 ```
 
 ### Using php-client
@@ -155,7 +146,6 @@ curl --location --request POST 'https://app.marksign.local/api/document/generate
 To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\IframeTempSigningLinkGenerationRequestBuilder`](/documentation/class-ref/GatewaySDKPhp/RequestBuilder/IframeTempSigningLinkGenerationRequestBuilder.html) as request builder.
 
 ```
-
 /**
  * The document uuid that was found from "Document upload" request.
  * The following is a dummy to use as example.
@@ -170,5 +160,4 @@ $linkGenerationReq = (new IframeTempSigningLinkGenerationRequestBuilder)
 $linkGenerationRes = $client->postRequest($linkGenerationReq);
 $linkGenerationResArray = $linkGenerationRes->toArray();
 var_dump($linkGenerationResArray);
-
 ```
