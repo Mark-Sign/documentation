@@ -40,17 +40,18 @@ Short description
   </tbody>
 </table>
 
-## URL parameter description
-
-| Key | Requirement | Type | Description   |
-| :--- | :--- | :--- |:--------------|
-| documentId | Mandatory | String | Document UUID |
-
 ## Request body parameter description
 
-| Key | Requirement | Type | Description |
-| :--- | :--- | :--- | :--- |
-| access_token | Mandatory | String | API Access Token |
+| Key                          | Requirement        | Type                  | Description                                                                                                                                  |
+|:-----------------------------|:-------------------|:----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
+| access_token                 | Mandatory          | String                | API Access Token                                                                                                                             |
+| document_id                  | Mandatory          | String                | Document UUID                                                                                                                                | 
+| file                         | Optional           | Object                | {"filename": "string","content": "string"}                                                                                                   |
+| callback_url                 | Mandatory          | String                | Callback URL                                                                                                                                 |
+| expire_after                 | Optional           | Integer               | Expiration period in minutes (default value is 30)                                                                                           |
+| delete_document_after        | Optional           | Integer               | Document removal period in minutes (should not be less than expire_after value)                                                              |
+| signers                      | Optional           | Array of objects      | { "name": "string", "surname": "string", "signature_type": "string", "phone_number": "string", "personal_code": "string", "email": "string"} |
+| language                     | Optional           | String                | User interface language ('lt' or 'en')                                                                                                       |
 
 
 
