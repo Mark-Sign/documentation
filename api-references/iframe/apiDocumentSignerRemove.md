@@ -127,7 +127,7 @@ curl --location --request POST 'https://app.marksign.local/api/document/{documen
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\IframeRemoveDocumentSignerRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/IframeRemoveDocumentSignerRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\IframeDocumentSignerRemoveRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/IframeDocumentSignerRemoveRequestBuilder.html) as request builder.
 
 ```
 /**
@@ -135,7 +135,7 @@ To use the php-client, please follow the installation and basic usage [here](/do
  * The following is a dummy to use as example.
  */
 
-$initReq = (new IframeRemoveDocumentSignerRequestBuilder)
+$initReq = (new IframeDocumentSignerRemoveRequestBuilder)
   ->withDocumentId('8c1b611f-ddcb-11ec-a74f-84c5a60a22fb')
   ->withPersonalCode('31111111111')
   ->withName('Vardenis')

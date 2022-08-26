@@ -1,12 +1,12 @@
 ---
 layout: default
-title: IframeRemoveDocumentSignerRequestBuilder
+title: IframeDocumentSignerRemoveRequestBuilder
 parent: Class References
 has_toc: true
 nav_order: 1
 ---
 
-# IframeRemoveDocumentSignerRequestBuilder
+# IframeDocumentSignerRemoveRequestBuilder
 [view source](https://github.com/Mark-Sign/gateway-sdk-php/blob/master/src/RequestBuilder/IframeTempSigningLinkGenerationRequestBuilder.php)
 
 {: .no_toc }
