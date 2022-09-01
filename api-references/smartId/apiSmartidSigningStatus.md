@@ -92,7 +92,7 @@ This API checks the status of the signing process initialized by [Initialize sig
 | :--- | :--- | :--- |
 | status | String | Status of the request, `error` in this case |
 | message | String | Brief message about what is wrong |
-| error_code | Integer | Unique code for the error |
+| error_code | Integer | Unique code for the error. Error codes are listed [here](/api-references/errorCodes.html) |
 
 
 ## Sample request

@@ -97,7 +97,7 @@ This endpoint is for uploading document for further tasks like validating the do
 | :--- | :--- | :--- |
 | status | String | Status of the request, `error` in this case |
 | message | String | Status message |
-| error_code | Number | Unique code for the error |
+| error_code | Integer | Unique code for the error. Error codes are listed [here](/api-references/errorCodes.html) |
 
 ## Sample request
 

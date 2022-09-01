@@ -76,7 +76,7 @@ This API initializes hash signing with qualified electronic signature stored on 
 | :--- | :--- | :--- |
 | status | String | Status of the request, `error` in this case |
 | message | String | Brief message about what is wrong |
-| error_code | Integer | Unique code for the error |
+| error_code | Integer | Unique code for the error. Error codes are listed [here](/api-references/errorCodes.html) |
 
 
 
