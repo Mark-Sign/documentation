@@ -144,7 +144,7 @@ curl --location --request POST 'https://app.marksign.local/api/document/generate
 
 ### Using php-client
 
-To use the php-client, please follow the installation and basic usage [here](/documentation/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\IframeTempSigningLinkGenerationRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/IframeTempSigningLinkGenerationRequestBuilder.html) as request builder.
+To use the php-client, please follow the installation and basic usage [here](/sdk-php-client.html#usage), and use [`AppBundle\GatewaySDKPhp\RequestBuilder\IframeTempSigningLinkGenerationRequestBuilder`](/class-ref/GatewaySDKPhp/RequestBuilder/IframeTempSigningLinkGenerationRequestBuilder.html) as request builder.
 
 ```
 /**
